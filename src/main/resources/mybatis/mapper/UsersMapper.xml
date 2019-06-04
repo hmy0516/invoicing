@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bigeng.invoicing.mapper.UsersMapper">
     <resultMap id="baseResultMap" type="com.bigeng.invoicing.pojo.system.Users">
-        <id column="c_uid" property="cUid" jdbcType="VARCHAR"/>
-        <result column="c_name" property="cName" jdbcType="VARCHAR"/>
-        <result column="c_password" property="password" jdbcType="VARCHAR"/>
-        <result column="c_roleid" property="cRoleId" jdbcType="VARCHAR"/>
-        <result column="i_status" property="iStatus" jdbcType="TINYINT"/>
-        <result column="dt_create" property="dtCreate" jdbcType="DATE"/>
-        <result column="dt_close" property="dtClose" jdbcType="DATE"/>
-        <result column="c_number" property="cNumber" jdbcType="VARCHAR"/>
+        <id column="c_uid" property="cUid"/>
+        <result column="c_name" property="cName"/>
+        <result column="c_password" property="password"/>
+        <result column="c_roleid" property="cRoleId"/>
+        <result column="i_status" property="iStatus"/>
+        <result column="dt_create" property="dtCreate"/>
+        <result column="dt_close" property="dtClose"/>
+        <result column="c_number" property="cNumber"/>
     </resultMap>
     <select id="queryUser" resultMap="baseResultMap" parameterType="String">
         select * from t_sys_user where c_uid=#{id}
