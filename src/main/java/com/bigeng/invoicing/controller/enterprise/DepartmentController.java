@@ -1,5 +1,6 @@
 package com.bigeng.invoicing.controller.enterprise;
 
+import com.bigeng.invoicing.pojo.RespMsg;
 import com.bigeng.invoicing.pojo.enterprise.Department;
 import com.bigeng.invoicing.service.enterprise.DepartmentService;
 import com.bigeng.invoicing.service.enterprise.impl.DepartmentServiceImpl;
@@ -28,11 +29,13 @@ public class DepartmentController {
     }*/
    //查找全部
     @RequestMapping("/listAllDepartment")
-    public PageInfo<Department> listAllDepartment( @RequestParam(value = "start", defaultValue = "0") int start, @RequestParam(value = "size", defaultValue = "5") int size)  {
+    public PageInfo<Department> listAllDepartment(@RequestParam(value = "start", defaultValue = "0") int start, @RequestParam(value = "size", defaultValue = "5") int size)  {
         PageHelper.startPage(start,size);
         List<Department> listDepartment= departmentServiceImpl.findAll();
         PageInfo<Department> page = new PageInfo<>(listDepartment);
         return page;
+        //return RespMsg.ok("success!","ppp");
+
     }
     //删除
     @RequestMapping("/deleteOne")

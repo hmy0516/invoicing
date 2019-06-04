@@ -15,7 +15,7 @@
         delete from t_hr_department where c_did=#{id}
     </delete>
 
-    <select id="findOne" resultMap="Department" parameterType="String">
+    <select id="findOne" resultType="Department" parameterType="String">
         select from t_hr_department where c_did=#{id}
     </select>
 
