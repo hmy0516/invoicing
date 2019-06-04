@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 
 public interface UsersService {
 
-    public Users queryUser(String id);
+    Users queryUser(String id);
 }
