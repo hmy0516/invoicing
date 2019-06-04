@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.enterprise.DepartmentMapper">
+    <resultMap id="baseResultMap" type="com.bigeng.invoicing.pojo.enterprise.Department">
+        <id column="c_did" property="cDid"/>
+        <result column="c_department" property="cDepartment"/>
+        <result column="c_comment" property="cComment"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="baseResultMap">
+        select * from t_hr_department
+    </select>
+
+    <delete id="deleteOne" parameterType="String">
+        delete from t_hr_department where c_did=#{id}
+    </delete>
+
+    <select id="findOne" resultMap="Department" parameterType="String">
+        select from t_hr_department where c_did=#{id}
+    </select>
+
+    <insert id="addOne" parameterType="Department" >
+        insert into t_hr_department(c_did,
+                                    c_department,
+                                    c_comment)
+        values (uuid(),
+                #{cDepartment},
+                #{cComment})
+    </insert>
+
+    <update id="updateOne" parameterType="Department">
+        update t_hr_department
+              set c_department=#{cDepartment},
+                  c_comment=#{cComment}
+        where c_did=#{cDid}
+    </update>
+
+
+</mapper>
