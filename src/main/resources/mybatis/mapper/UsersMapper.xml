@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bigeng.invoicing.mapper.UsersMapper">
+<mapper namespace="com.bigeng.invoicing.mapper.system.UsersMapper">
     <resultMap id="baseResultMap" type="com.bigeng.invoicing.pojo.system.Users">
         <id column="c_uid" property="cUid"/>
         <result column="c_name" property="cName"/>
