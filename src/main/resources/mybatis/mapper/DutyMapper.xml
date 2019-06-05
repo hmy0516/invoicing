@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.enterprise.DutyMapper">
+    <resultMap id="baseResultMap" type="com.bigeng.invoicing.pojo.enterprise.Duty">
+        <id column="c_id" property="cId"/>
+        <result column="c_duty" property="cDuty"/>
+        <result column="c_comment" property="cComment"/>
+    </resultMap>
+
+    <select id="showAll" resultMap="baseResultMap">
+        select * from t_hr_duty limit #{start},#{count}
+    </select>
+
+    <select id="getAllCount" resultType="Integer">
+        select count(*) from t_hr_duty
+    </select>
+
+    <delete id="delById" parameterType="String">
+         delete from t_hr_duty where c_id = #{id}
+    </delete>
+
+    <update id="updateDuty" parameterType="com.bigeng.invoicing.pojo.enterprise.Duty">
+        update t_hr_duty
+        <set>
+            <if test="duty.cDuty != null">
+                c_duty=#{duty.cDuty,jdbcType=VARCHAR},
+            </if>
+            <if test="duty.cComment != null">
+                c_comment=#{duty.cComment,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where c_id=#{duty.cId,jdbcType=VARCHAR}
+    </update>
+
+    <insert id="addDuty" parameterType="com.bigeng.invoicing.pojo.enterprise.Duty">
+        insert into t_hr_duty values (#{duty.cId},#{duty.cDuty},#{duty.cComment})
+    </insert>
+
+</mapper>
