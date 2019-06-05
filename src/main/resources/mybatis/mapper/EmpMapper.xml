@@ -74,4 +74,8 @@
             </set>
         where c_number=#{emp.c_number}
     </update>
+
+    <select id="getEmpByPage" resultType="com.bigeng.invoicing.pojo.enterprise.Employee">
+        select * from t_hr_employee limit #{start},#{size}
+    </select>
 </mapper>

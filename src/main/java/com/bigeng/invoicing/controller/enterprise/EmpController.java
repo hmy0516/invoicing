@@ -5,7 +5,12 @@ import com.bigeng.invoicing.pojo.RespMsg;
 import com.bigeng.invoicing.pojo.enterprise.Employee;
 import com.bigeng.invoicing.service.enterprise.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author 胡承进
@@ -40,6 +45,17 @@ public class EmpController {
             return  RespMsg.ok("更新成功");
         else
             return RespMsg.error("更新失败");
+    }
+
+    @RequestMapping(value="/emp",method=RequestMethod.GET)
+    public RespMsg getEmpByPage(
+            @RequestParam(defaultValue = "1")  Integer page,
+            @RequestParam(defaultValue = "10") Integer size,
+            @RequestParam(defaultValue = "") String keywords
+    ){
+        Map<String,Object> map=new HashMap<>();
+        List<Employee> employeeList=empService.getEmpByPage(page,size,keywords);
+        return RespMsg.ok("查询成功",employeeList);
     }
 
 }

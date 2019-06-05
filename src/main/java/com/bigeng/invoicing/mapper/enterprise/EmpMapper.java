@@ -3,6 +3,9 @@ package com.bigeng.invoicing.mapper.enterprise;
 import com.bigeng.invoicing.pojo.enterprise.Employee;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 /**
  * @author 胡承进
@@ -16,4 +19,6 @@ public interface EmpMapper {
     int addEmp( Employee employee);
 
     int updateEmp(@Param("emp") Employee employee);
+
+    List<Employee> getEmpByPage(@Param("start") int start, @Param("size") Integer size,@Param("keywords") String keywords);
 }
