@@ -33,6 +33,9 @@ public class Employee {
     private String c_mobile;
 
     //家庭联系人 10 null
+    private  String c_linkman;
+
+    //联系人手机号 11 null
     private String c_lmmobile;
 
     //入职时间 null
@@ -116,6 +119,14 @@ public class Employee {
 
     public void setC_mobile(String c_mobile) {
         this.c_mobile = c_mobile;
+    }
+
+    public String getC_linkman() {
+        return c_linkman;
+    }
+
+    public void setC_linkman(String c_linkman) {
+        this.c_linkman = c_linkman;
     }
 
     public String getC_lmmobile() {
@@ -208,6 +219,7 @@ public class Employee {
                 ", c_id='" + c_id + '\'' +
                 ", c_address='" + c_address + '\'' +
                 ", c_mobile='" + c_mobile + '\'' +
+                ", c_linkman='" + c_linkman + '\'' +
                 ", c_lmmobile='" + c_lmmobile + '\'' +
                 ", dt_join=" + dt_join +
                 ", dt_left=" + dt_left +

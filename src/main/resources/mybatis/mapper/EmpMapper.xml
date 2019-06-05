@@ -11,9 +11,67 @@
         </foreach>
     </delete>
 
-    <insert id="add" parameterType="com.bigeng.invoicing.pojo.enterprise.Employee">
-        insert into t_hr_employee (c_number,c_name,i_sex,c_education,c_id,c_address,c_mobile,c_linkman,c_lmmobile,dt_join,dt_left,i_status,c_idpic,c_pic,ts_ctime,c_dutyid,c_did)
+    <insert id="addEmp" parameterType="com.bigeng.invoicing.pojo.enterprise.Employee">
+        insert into t_hr_employee (c_number,c_name,i_sex,c_education,c_id,c_address,c_mobile,c_linkman,c_lmmobile,dt_join,dt_left,i_status,c_idpic,c_idpic1,c_pic,ts_ctime,c_dutyid,c_did)
         values
-        (#{c_number},#{c_name},#{i_sex},#{c_education},#{c_id},#{c_address},#{c_mobile},#{c_linkman},#{c_lmmobile},#{dt_join},#{dt_left},#{i_status},#{c_idpic},#{c_pic},#{ts_ctime},#{c_dutyid},#{c_did})
+        (#{c_number},#{c_name},#{i_sex},#{c_education},#{c_id},#{c_address},#{c_mobile},#{c_linkman},#{c_lmmobile},#{dt_join},#{dt_left},#{i_status},#{c_idpic},#{c_idpicl},#{c_pic},#{ts_ctime},#{c_dutyid},#{c_did})
     </insert>
+
+    <update id="updateEmp" >
+            update t_hr_employee
+            <set>
+                <if test="emp.c_name !=null">
+                    c_name=#{emp.c_name},
+                </if>
+                <if test="emp.i_sex !=null">
+                    i_sex=#{emp.i_sex},
+                </if>
+                <if test="emp.c_education !=null">
+                    c_education=#{emp.c_education},
+                </if>
+                <if test="emp.c_id !=null">
+                    c_id=#{emp.c_id},
+                </if>
+                <if test="emp.c_address !=null">
+                    c_address=#{emp.c_address},
+                </if>
+                <if test="emp.c_mobile !=null">
+                    c_mobile=#{emp.c_mobile},
+                </if>
+                <if test="emp.c_linkman !=null">
+                    c_linkman=#{emp.c_linkman},
+                </if>
+                <if test="emp.c_lmmobile !=null">
+                    c_lmmobile=#{emp.c_lmmobile},
+                </if>
+                <if test="emp.dt_join !=null">
+                    dt_join=#{emp.dt_join},
+                </if>
+                <if test="emp.dt_left !=null">
+                    dt_left=#{emp.dt_left},
+                </if>
+                <if test="emp.i_status !=null">
+                    i_status=#{emp.i_status},
+                </if>
+                <if test="emp.c_idpic !=null">
+                    c_idpic=#{emp.c_idpic},
+                </if>
+                <if test="emp.c_idpic1 !=null">
+                    c_idpic1=#{emp.c_idpic1},
+                </if>
+                <if test="emp.c_pic !=null">
+                    c_pic=#{emp.c_pic},
+                </if>
+                <if test="emp.ts_ctime !=null">
+                    ts_ctime=#{emp.ts_ctime},
+                </if>
+                <if test="emp.c_dutyid !=null">
+                    c_dutyid=#{emp.c_dutyid},
+                </if>
+                <if test="emp.c_did !=null">
+                    c_did=#{emp.c_did},
+                </if>
+            </set>
+        where c_number=#{emp.c_number}
+    </update>
 </mapper>

@@ -1,5 +1,6 @@
 package com.bigeng.invoicing.mapper.enterprise;
 
+import com.bigeng.invoicing.pojo.enterprise.Employee;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,5 +13,7 @@ import org.apache.ibatis.annotations.Param;
 public interface EmpMapper {
     int deleteByNum(@Param("numbers") String[] splits);
 
-    int add(EmpMapper empMapper);
+    int addEmp( Employee employee);
+
+    int updateEmp(@Param("emp") Employee employee);
 }
