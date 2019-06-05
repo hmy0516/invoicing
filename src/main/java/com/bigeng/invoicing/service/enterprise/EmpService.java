@@ -1,6 +1,7 @@
 package com.bigeng.invoicing.service.enterprise;
 
 import com.bigeng.invoicing.mapper.enterprise.EmpMapper;
+import com.bigeng.invoicing.pojo.enterprise.Employee;
 
 /**
  * @author 胡承进
@@ -10,5 +11,7 @@ import com.bigeng.invoicing.mapper.enterprise.EmpMapper;
 public interface EmpService {
     boolean deleteByNum(String numbers);
 
-    int add(EmpMapper empMapper);
+    int add(Employee employee);
+
+    int updateEmp(Employee employee);
 }

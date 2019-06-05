@@ -2,11 +2,10 @@ package com.bigeng.invoicing.controller.enterprise;
 
 import com.bigeng.invoicing.mapper.enterprise.EmpMapper;
 import com.bigeng.invoicing.pojo.RespMsg;
+import com.bigeng.invoicing.pojo.enterprise.Employee;
 import com.bigeng.invoicing.service.enterprise.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 胡承进
@@ -21,9 +20,8 @@ public class EmpController {
     private EmpService empService;
 
     @RequestMapping(value = "/add")
-    public RespMsg addEmp(EmpMapper empMapper){
-        System.err.println(empMapper);
-        if(empService.add(empMapper)==1)
+    public RespMsg addEmp(@RequestBody Employee employee){
+        if(empService.add(employee)==1)
             return RespMsg.ok("添加成功");
         else
             return RespMsg.error("删除失败");
@@ -36,4 +34,13 @@ public class EmpController {
         else
             return RespMsg.error("删除失败");
     }
+
+    @RequestMapping(value="/update",method= RequestMethod.PUT)
+    public RespMsg updateEmp(@RequestBody Employee employee){
+        if(empService.updateEmp(employee)==1)
+            return  RespMsg.ok("更新成功");
+        else
+            return RespMsg.error("更新失败");
+    }
+
 }

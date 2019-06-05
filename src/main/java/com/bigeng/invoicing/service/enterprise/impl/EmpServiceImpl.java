@@ -1,6 +1,7 @@
 package com.bigeng.invoicing.service.enterprise.impl;
 
 import com.bigeng.invoicing.mapper.enterprise.EmpMapper;
+import com.bigeng.invoicing.pojo.enterprise.Employee;
 import com.bigeng.invoicing.service.enterprise.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,13 +19,18 @@ public class EmpServiceImpl implements EmpService {
     private EmpMapper empMapper;
 
     @Override
-    public int add(EmpMapper empMapper) {
-        return empMapper.add(empMapper);
+    public int add(Employee employee) {
+        return empMapper.addEmp(employee);
     }
 
     @Override
     public boolean deleteByNum(String numbers) {
         String[] splits=numbers.split(",");
         return empMapper.deleteByNum(splits)==splits.length;
+    }
+
+    @Override
+    public int updateEmp(Employee employee) {
+        return empMapper.updateEmp(employee);
     }
 }
