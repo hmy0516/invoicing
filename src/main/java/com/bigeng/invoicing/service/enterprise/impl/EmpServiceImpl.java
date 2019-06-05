@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 /**
  * @author 胡承进
  * @version 1.0
@@ -34,11 +32,5 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public int updateEmp(Employee employee) {
         return empMapper.updateEmp(employee);
-    }
-
-    @Override
-    public List<Employee> getEmpByPage(Integer page, Integer size, String keywords, String c_number) {
-        int start=(page-1)*size;
-        return empMapper.getEmpByPage(start,size,keywords,c_number);
     }
 }
