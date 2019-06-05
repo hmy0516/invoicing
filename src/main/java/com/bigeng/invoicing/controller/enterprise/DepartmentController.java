@@ -9,10 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -21,47 +18,42 @@ public class DepartmentController {
     @Autowired
     DepartmentServiceImpl departmentServiceImpl;
 
-
-   /* @RequestMapping("/getAllDepartment")
-    public List<Department> getAllDepartment(){
-        List<Department> listDepartment = departmentServiceImpl.findAll();
-        return  listDepartment;
-    }*/
    //查找全部
-    @RequestMapping("/listAllDepartment")
-    public PageInfo<Department> listAllDepartment(@RequestParam(value = "start", defaultValue = "0") int start, @RequestParam(value = "size", defaultValue = "5") int size)  {
+    @GetMapping("/department")
+    public RespMsg listAllDepartment(@RequestParam(value = "start", defaultValue = "0") int start, @RequestParam(value = "size", defaultValue = "5") int size)  {
+
         PageHelper.startPage(start,size);
         List<Department> listDepartment= departmentServiceImpl.findAll();
         PageInfo<Department> page = new PageInfo<>(listDepartment);
-        return page;
-        //return RespMsg.ok("success!","ppp");
+       /* return page;*/
+        return RespMsg.ok("success!",page);
 
     }
     //删除
-    @RequestMapping("/deleteOne")
-    public int deleteOne(String cDid){
+    @DeleteMapping("/department/{id}")
+    public int deleteOne(@PathVariable("id")String cDid){
         int num = departmentServiceImpl.deleteOne(cDid);
         System.out.println(num);
         return num;
     }
 
     //查找一个
-    @RequestMapping("/findOne/{id}")
+    @GetMapping("/department/{id}")
     public  String findOne(@PathVariable("id") String cDid){
         Department department=departmentServiceImpl.findOne(cDid);
         return  department.toString();
     }
 
     //添加
-    @RequestMapping("/addOne")
-    public  boolean  addOne(Department department){
+    @PostMapping("/department")
+    public  boolean  addOne(@RequestBody Department department){
         boolean bool = departmentServiceImpl.addOne(department);
         return bool;
     }
 
     //更新
-    @RequestMapping("/updateOne")
-    public  int updateOne(Department department){
+    @PutMapping("/department")
+    public  int updateOne(@RequestBody Department department){
         int num = departmentServiceImpl.updateOne(department);
         return num;
     }

@@ -15,15 +15,15 @@
         delete from t_hr_department where c_did=#{id}
     </delete>
 
-    <select id="findOne" resultType="Department" parameterType="String">
-        select from t_hr_department where c_did=#{id}
+    <select id="findOne" resultMap="baseResultMap" parameterType="String">
+        select * from t_hr_department where c_did=#{id}
     </select>
 
-    <insert id="addOne" parameterType="Department" >
+    <insert id="addOne" parameterType="com.bigeng.invoicing.pojo.enterprise.Department" >
         insert into t_hr_department(c_did,
                                     c_department,
                                     c_comment)
-        values (uuid(),
+        values (#{cDid},
                 #{cDepartment},
                 #{cComment})
     </insert>
