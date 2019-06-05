@@ -14,7 +14,7 @@
     <insert id="addEmp" parameterType="com.bigeng.invoicing.pojo.enterprise.Employee">
         insert into t_hr_employee (c_number,c_name,i_sex,c_education,c_id,c_address,c_mobile,c_linkman,c_lmmobile,dt_join,dt_left,i_status,c_idpic,c_idpic1,c_pic,ts_ctime,c_dutyid,c_did)
         values
-        (#{c_number},#{c_name},#{i_sex},#{c_education},#{c_id},#{c_address},#{c_mobile},#{c_linkman},#{c_lmmobile},#{dt_join},#{dt_left},#{i_status},#{c_idpic},#{c_idpicl},#{c_pic},#{ts_ctime},#{c_dutyid},#{c_did})
+        (#{c_number},#{c_name},#{i_sex},#{c_education},#{c_id},#{c_address},#{c_mobile},#{c_linkman},#{c_lmmobile},#{dt_join},#{dt_left},#{i_status},#{c_idpic},#{c_idpic1},#{c_pic},#{ts_ctime},#{c_dutyid},#{c_did})
     </insert>
 
     <update id="updateEmp" >
@@ -74,4 +74,8 @@
             </set>
         where c_number=#{emp.c_number}
     </update>
+
+    <select id="getEmpByPage" resultType="com.bigeng.invoicing.pojo.enterprise.Employee">
+        select * from t_hr_employee limit #{start,size}
+    </select>
 </mapper>
