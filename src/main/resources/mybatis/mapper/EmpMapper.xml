@@ -56,8 +56,8 @@
                 <if test="emp.c_idpic !=null">
                     c_idpic=#{emp.c_idpic},
                 </if>
-                <if test="emp.c_idpic1 !=null">
-                    c_idpic1=#{emp.c_idpic1},
+                <if test="emp.c_idpicl !=null">
+                    c_idpicl=#{emp.c_idpicl},
                 </if>
                 <if test="emp.c_pic !=null">
                     c_pic=#{emp.c_pic},
