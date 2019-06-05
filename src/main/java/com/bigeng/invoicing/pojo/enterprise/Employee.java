@@ -51,7 +51,7 @@ public class Employee {
     private String c_idpic;
 
     //员工反面照 255 null
-    private  String c_idpicl;
+    private  String c_idpic1;
 
     //员工近照 255 null
     private String c_pic;
@@ -169,12 +169,12 @@ public class Employee {
         this.c_idpic = c_idpic;
     }
 
-    public String getC_idpicl() {
-        return c_idpicl;
+    public String getC_idpic1() {
+        return c_idpic1;
     }
 
-    public void setC_idpicl(String c_idpicl) {
-        this.c_idpicl = c_idpicl;
+    public void setC_idpic1(String c_idpic1) {
+        this.c_idpic1 = c_idpic1;
     }
 
     public String getC_pic() {
@@ -225,7 +225,7 @@ public class Employee {
                 ", dt_left=" + dt_left +
                 ", i_status=" + i_status +
                 ", c_idpic='" + c_idpic + '\'' +
-                ", c_idpicl='" + c_idpicl + '\'' +
+                ", c_idpic1='" + c_idpic1 + '\'' +
                 ", c_pic='" + c_pic + '\'' +
                 ", ts_ctime=" + ts_ctime +
                 ", c_dutyid='" + c_dutyid + '\'' +
