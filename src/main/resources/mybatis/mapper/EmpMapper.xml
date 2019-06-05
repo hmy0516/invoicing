@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigeng.invoicing.mapper.enterprise.EmpMapper">
+
+    <delete id="deleteByNum" >
+        DELETE FROM t_hr_employee WHERE c_number IN
+        <foreach collection="numbers" separator="," open="(" close=")" item="number">
+            #{number}
+        </foreach>
+    </delete>
+
+    <insert id="add" parameterType="com.bigeng.invoicing.pojo.enterprise.Employee">
+        insert into t_hr_employee (c_number,c_name,i_sex,c_education,c_id,c_address,c_mobile,c_linkman,c_lmmobile,dt_join,dt_left,i_status,c_idpic,c_pic,ts_ctime,c_dutyid,c_did)
+        values
+        (#{c_number},#{c_name},#{i_sex},#{c_education},#{c_id},#{c_address},#{c_mobile},#{c_linkman},#{c_lmmobile},#{dt_join},#{dt_left},#{i_status},#{c_idpic},#{c_pic},#{ts_ctime},#{c_dutyid},#{c_did})
+    </insert>
+</mapper>
