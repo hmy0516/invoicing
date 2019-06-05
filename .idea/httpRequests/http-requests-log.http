@@ -1,3 +1,14 @@
+PUT http://localhost:8080/emp/update
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"c_number":"ds",  "c_name":"huchengjin",   "i_sex":"1",   "c_education":"1",   "c_id":"1",   "c_address":"1",    "c_mobile":"1",    "c_linkman":"1",    "c_lmmobile":"1",    "dt_join":"2019-06-14",    "dt_left":"2019-06-14",    "i_status":"1",    "c_idpic":"1",    "c_idpic1":"12",    "c_pic":"1",    "ts_ctime":"2019-06-14",    "c_dutyid":"1",     "c_did":"1" }
+
+<> 2019-06-05T052404.404.json
+
+###
+
 GET http://localhost:8080/department
 Accept: */*
 Content-Type: application/json
@@ -496,14 +507,6 @@ content-type: application/json
 {"cDepartment":"销售部","cComment":"插入测试"}
 
 <> 2019-06-05T103809.500.json
-
-###
-
-PUT http://localhost:8080/addOne
-Accept: */*
-content-type: application/json
-
-{"cDepartment":"销售部","cComment":"插入测试"}
 
 ###
 
