@@ -1,3 +1,13 @@
+GET http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T044423.200.json
+
+###
+
 DELETE http://localhost:8080/department/d008
 Accept: */*
 Content-Type: application/json
