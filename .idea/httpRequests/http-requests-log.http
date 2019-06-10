@@ -1,0 +1,499 @@
+DELETE http://localhost:8080/department/d008
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T035903.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T035821.200.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d011","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T035517.200.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d010","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T035201.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T035121.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T034755.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T034635.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T034116.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+Content-Type: UTF-8
+content: charset=UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T034043.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+Content-Type: UTF-8
+content: charset=UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T032749.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+Content-Type: application/json
+Content-Type: charset=UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T032635.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=utf-8
+Content-Type: utf-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T032459.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=utf-8
+Content-Type: utf-8
+Transfer-Encoding: utf-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=utf-8
+Content-Type: utf-8
+Transfer-Encoding: utf-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=utf-8
+Content-Type: utf-8
+Transfer-Encoding: utf-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=utf-8
+Content-Type: utf-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T032257.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+Content-Type: charset=utf-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T020924.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+Content-Encoding: UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T020711.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T020550.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T015903.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T015752.200.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
+Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T014441.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
+Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+
+{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T014356.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
+Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+
+{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T014342.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json;charset=UTF-8
+Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
+Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+
+{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T014245.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T013649.200.json
+
+###
+
+PUT http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+
+<> 2019-06-05T112337.200.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid"="d008", "cDepartment"="销售部", cComment="插入测试"}
+
+<> 2019-06-05T112112.400.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid"="d008", "cDepartment"="销售部", cComment="插入测试"}
+
+<> 2019-06-05T111739.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+
+<> 2019-06-05T111448.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{'cDid'='d004', 'cDepartment'='销售部', 'cComment'='插入测试'}
+
+<> 2019-06-05T111416.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{'cDid'='d004', 'cDepartment'='销售部', 'cComment'='插入测试'}
+
+<> 2019-06-05T111411.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+
+<> 2019-06-05T111346.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+department{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+
+<> 2019-06-05T111241.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+Department{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+
+<> 2019-06-05T111220.500.json
+
+###
+
+GET http://localhost:8080/department/d003
+Accept: */*
+content-type: application/json
+
+{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T111134.200.txt
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T110936.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T110120.500.json
+
+###
+
+POST http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T104720.500.json
+
+###
+
+GET http://localhost:8080/department/d003
+Accept: */*
+content-type: application/json
+
+{"cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T104552.200.txt
+
+###
+
+GET http://localhost:8080/department/d003
+Accept: */*
+content-type: application/json
+
+{"cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T104415.500.json
+
+###
+
+GET http://localhost:8080/department/d003
+Accept: */*
+content-type: application/json
+
+{"cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T103951.500.json
+
+###
+
+GET http://localhost:8080/department
+Accept: */*
+content-type: application/json
+
+{"cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T103909.200.json
+
+###
+
+GET http://localhost:8080/department/d003
+Accept: */*
+content-type: application/json
+
+{"cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T103820.500.json
+
+###
+
+GET http://localhost:8080/department/d00
+Accept: */*
+content-type: application/json
+
+{"cDepartment":"销售部","cComment":"插入测试"}
+
+<> 2019-06-05T103809.500.json
+
+###
+
+PUT http://localhost:8080/addOne
+Accept: */*
+content-type: application/json
+
+{"cDepartment":"销售部","cComment":"插入测试"}
+
+###
+
