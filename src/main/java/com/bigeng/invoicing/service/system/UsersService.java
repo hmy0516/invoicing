@@ -6,4 +6,5 @@ import org.springframework.stereotype.Service;
 public interface UsersService {
 
     Users queryUser(String id);
+    Users login(String cNumber,String password);
 }

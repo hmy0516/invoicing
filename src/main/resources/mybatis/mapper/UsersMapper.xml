@@ -14,4 +14,8 @@
     <select id="queryUser" resultMap="baseResultMap" parameterType="String">
         select * from t_sys_user where c_uid=#{id}
     </select>
+
+    <select id="login" resultMap="baseResultMap">
+        select * from t_sys_user where c_number=#{username} and c_password=#{password}
+    </select>
 </mapper>
