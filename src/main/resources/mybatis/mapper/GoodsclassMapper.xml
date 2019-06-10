@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.resource.GoodsclassMapper" >
+  <resultMap id="BaseResultMap" type="com.bigeng.invoicing.pojo.resource.Goodsclass" >
+    <id column="c_class" property="cClass" jdbcType="VARCHAR" />
+    <result column="c_desc" property="cDesc" jdbcType="VARCHAR" />
+    <result column="i_idx" property="iIdx" jdbcType="TINYINT" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_lsc_goodsclass
+    where c_class = #{cClass,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Goodsclass" >
+    <selectKey resultType="java.lang.String" keyProperty="cClass" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_lsc_goodsclass (c_desc, i_idx)
+    values (#{cDesc,jdbcType=VARCHAR}, #{iIdx,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Goodsclass" >
+    update t_lsc_goodsclass
+    set c_desc = #{cDesc,jdbcType=VARCHAR},
+      i_idx = #{iIdx,jdbcType=TINYINT}
+    where c_class = #{cClass,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select c_class, c_desc, i_idx
+    from t_lsc_goodsclass
+    where c_class = #{cClass,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select c_class, c_desc, i_idx
+    from t_lsc_goodsclass
+  </select>
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.resource.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.bigeng.invoicing.pojo.resource.Goods" >
+    <id column="c_id" property="cId" jdbcType="VARCHAR" />
+    <result column="c_desc" property="cDesc" jdbcType="VARCHAR" />
+    <result column="c_format" property="cFormat" jdbcType="VARCHAR" />
+    <result column="c_brand" property="cBrand" jdbcType="VARCHAR" />
+    <result column="c_comp" property="cComp" jdbcType="VARCHAR" />
+    <result column="c_class" property="cClass" jdbcType="VARCHAR" />
+    <result column="c_bunit" property="cBunit" jdbcType="VARCHAR" />
+    <result column="f_expiration" property="fExpiration" jdbcType="DECIMAL" />
+    <result column="c_code" property="cCode" jdbcType="VARCHAR" />
+    <result column="c_qrcode" property="cQrcode" jdbcType="VARCHAR" />
+    <result column="f_pprice" property="fPprice" jdbcType="DECIMAL" />
+    <result column="f_sprice" property="fSprice" jdbcType="DECIMAL" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_lsc_goods
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Goods" >
+    <selectKey resultType="java.lang.String" keyProperty="cId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_lsc_goods (c_desc, c_format, c_brand, 
+      c_comp, c_class, c_bunit, 
+      f_expiration, c_code, c_qrcode, 
+      f_pprice, f_sprice)
+    values (#{cDesc,jdbcType=VARCHAR}, #{cFormat,jdbcType=VARCHAR}, #{cBrand,jdbcType=VARCHAR}, 
+      #{cComp,jdbcType=VARCHAR}, #{cClass,jdbcType=VARCHAR}, #{cBunit,jdbcType=VARCHAR}, 
+      #{fExpiration,jdbcType=DECIMAL}, #{cCode,jdbcType=VARCHAR}, #{cQrcode,jdbcType=VARCHAR}, 
+      #{fPprice,jdbcType=DECIMAL}, #{fSprice,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Goods" >
+    update t_lsc_goods
+    set c_desc = #{cDesc,jdbcType=VARCHAR},
+      c_format = #{cFormat,jdbcType=VARCHAR},
+      c_brand = #{cBrand,jdbcType=VARCHAR},
+      c_comp = #{cComp,jdbcType=VARCHAR},
+      c_class = #{cClass,jdbcType=VARCHAR},
+      c_bunit = #{cBunit,jdbcType=VARCHAR},
+      f_expiration = #{fExpiration,jdbcType=DECIMAL},
+      c_code = #{cCode,jdbcType=VARCHAR},
+      c_qrcode = #{cQrcode,jdbcType=VARCHAR},
+      f_pprice = #{fPprice,jdbcType=DECIMAL},
+      f_sprice = #{fSprice,jdbcType=DECIMAL}
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select c_id, c_desc, c_format, c_brand, c_comp, c_class, c_bunit, f_expiration, c_code, 
+    c_qrcode, f_pprice, f_sprice
+    from t_lsc_goods
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select c_id, c_desc, c_format, c_brand, c_comp, c_class, c_bunit, f_expiration, c_code, 
+    c_qrcode, f_pprice, f_sprice
+    from t_lsc_goods
+  </select>
+</mapper>

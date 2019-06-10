@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.resource.Vendor_GoodspriceMapper" >
+  <resultMap id="BaseResultMap" type="com.bigeng.invoicing.pojo.resource.Vendor_Goodsprice" >
+    <id column="c_gid" property="cGid" jdbcType="VARCHAR" />
+    <id column="c_vid" property="cVid" jdbcType="VARCHAR" />
+    <result column="f_price" property="fPrice" jdbcType="DECIMAL" />
+    <result column="dt_begin" property="dtBegin" jdbcType="TIMESTAMP" />
+    <result column="dt_end" property="dtEnd" jdbcType="TIMESTAMP" />
+    <result column="i_status" property="iStatus" jdbcType="TINYINT" />
+    <result column="c_comment" property="cComment" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from t_lsc_vendor_goodsprice
+    where c_gid = #{cGid,jdbcType=VARCHAR}
+      and c_vid = #{cVid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Vendor_Goodsprice" >
+    insert into t_lsc_vendor_goodsprice (c_gid, c_vid, f_price, 
+      dt_begin, dt_end, i_status, 
+      c_comment)
+    values (#{cGid,jdbcType=VARCHAR}, #{cVid,jdbcType=VARCHAR}, #{fPrice,jdbcType=DECIMAL}, 
+      #{dtBegin,jdbcType=TIMESTAMP}, #{dtEnd,jdbcType=TIMESTAMP}, #{iStatus,jdbcType=TINYINT}, 
+      #{cComment,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Vendor_Goodsprice" >
+    update t_lsc_vendor_goodsprice
+    set f_price = #{fPrice,jdbcType=DECIMAL},
+      dt_begin = #{dtBegin,jdbcType=TIMESTAMP},
+      dt_end = #{dtEnd,jdbcType=TIMESTAMP},
+      i_status = #{iStatus,jdbcType=TINYINT},
+      c_comment = #{cComment,jdbcType=VARCHAR}
+    where c_gid = #{cGid,jdbcType=VARCHAR}
+      and c_vid = #{cVid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select c_gid, c_vid, f_price, dt_begin, dt_end, i_status, c_comment
+    from t_lsc_vendor_goodsprice
+    where c_gid = #{cGid,jdbcType=VARCHAR}
+      and c_vid = #{cVid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select c_gid, c_vid, f_price, dt_begin, dt_end, i_status, c_comment
+    from t_lsc_vendor_goodsprice
+  </select>
+</mapper>
