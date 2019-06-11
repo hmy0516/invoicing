@@ -21,8 +21,9 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerMapper customerMapper;
 
     @Override
-    public int deleteByPrimaryKey(String cId) {
-        return customerMapper.deleteByPrimaryKey(cId);
+    public boolean deleteByPrimaryKey(String cId) {
+        String ids[]=cId.split(",");
+        return customerMapper.deleteByPrimaryKey(ids)==ids.length;
     }
 
     @Override
@@ -43,5 +44,16 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public int updateByPrimaryKey(Customer record) {
         return customerMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<Customer> selectByPage(Integer page, Integer size, String name, String addr, String contacter, String saleneme) {
+        int start=(page-1)*size;
+        return customerMapper.selectByPage(start,size,name,addr,contacter,saleneme);
+    }
+
+    @Override
+    public Long PageCount(String name, String addr, String contacter, String salename) {
+        return customerMapper.getPageCount(name,addr,contacter,salename);
     }
 }

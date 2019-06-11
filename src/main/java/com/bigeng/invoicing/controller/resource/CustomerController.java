@@ -4,10 +4,11 @@ import com.bigeng.invoicing.pojo.RespMsg;
 import com.bigeng.invoicing.pojo.resource.Customer;
 import com.bigeng.invoicing.service.resource.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author 胡承进
@@ -40,8 +41,26 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/customer",method = RequestMethod.GET)
-    public RespMsg selectCustomer(){
-        return RespMsg.ok("查询成功",customerService.selectAll());
+    public RespMsg selectCustomer(
+            @RequestParam(defaultValue = "1") Integer page,
+            @RequestParam(defaultValue = "10") Integer size,
+            String name,String addr,String contacter,String salename){
+        Map<String,Object> map=new HashMap<>();
+        List<Customer> customers=customerService.selectByPage(page,size,name,addr,contacter,salename);
+        map.put("customers",customers);
+        Long count=customerService.PageCount(name,addr,contacter,salename);
+        map.put("count",count);
+        return RespMsg.ok("查询成功",map);
+    }
+
+    @RequestMapping(value = "/customer/{ids}",method = RequestMethod.DELETE)
+    public RespMsg deleteCustomer(@PathVariable String ids){
+        if(customerService.deleteByPrimaryKey(ids)){
+            return RespMsg.ok("删除成功");
+        }else{
+            return RespMsg.error("删除失败");
+        }
+
     }
 
 }

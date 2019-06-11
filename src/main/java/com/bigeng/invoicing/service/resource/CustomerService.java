@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface CustomerService {
 
-    int deleteByPrimaryKey(String cId);
+    boolean deleteByPrimaryKey(String cId);
 
     int insert(Customer record);
 
@@ -20,4 +20,8 @@ public interface CustomerService {
     List<Customer> selectAll();
 
     int updateByPrimaryKey(Customer record);
+
+    List<Customer> selectByPage( Integer page, Integer size, String name, String addr, String contacter, String saleneme);
+
+    Long PageCount(String name, String addr, String contacter, String salename);
 }
