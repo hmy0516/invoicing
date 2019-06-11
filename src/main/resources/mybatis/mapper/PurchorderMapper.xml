@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.enterprise.PurchorderMapper">
+    <resultMap id="purchorder" type="Purchorder">
+        <id column="p_i_pono" property="i_pono"/>
+        <result column="c_uuid" property="c_uuid"/>
+        <result column="dt_dt" property="dt_dt"/>
+        <result column="dt_begin" property="dt_begin"/>
+        <result column="dt_end" property="dt_end"/>
+        <result column="c_clerk" property="c_clerk"/>
+        <result column="c_vendor" property="c_vendor"/>
+        <result column="c_base" property="c_base"/>
+        <result column="c_sale" property="c_sale"/>
+        <result column="c_check" property="c_check"/>
+        <result column="dt_check" property="dt_check"/>
+        <result column="c_checkout" property="c_checkout"/>
+        <result column="dt_checkout" property="dt_checkout"/>
+        <result column="c_invalid" property="c_invalid"/>
+        <result column="dt_invalid" property="dt_invalid"/>
+        <result column="p_c_comment" property="c_comment"/>
+        <result column="i_bno" property="i_bno"/>
+        <result column="i_status" property="i_status"/>
+        <collection property="purchorderdetail" ofType="Purchorderdetail">
+            <id column="pd_i_pono" property="i_pono" />
+            <result column="c_gid" property="c_gid"/>
+            <result column="f_pquant" property="f_pquant"/>
+            <result column="c_unit" property="c_unit"/>
+            <result column="f_price" property="f_price"/>
+            <result column="f_amount" property="f_amount"/>
+            <result column="pd_c_comment" property="c_comment"/>
+        </collection>
+    </resultMap>
+
+    <select id="findAll" resultMap="purchorder">
+        select p.*,pd.*,p.i_pono 'p_i_pono',pd.i_pono 'pd_i_pono',p.c_comment 'p_c_comment',pd.c_comment 'pd_c_comment'
+        from t_lsc_purchorder p left join t_lsc_purchorderdetail pd
+        on p.i_pono = pd.i_pono
+    </select>
+</mapper>

@@ -21,7 +21,7 @@ public class GroupinfoController {
         PageHelper.startPage(start,size);
         List<Groupinfo> listGroupinfo = groupinfoService.findAll();
         PageInfo<Groupinfo> page = new PageInfo<>(listGroupinfo);
-        return RespMsg.error("Select Successfuly!",page);
+        return RespMsg.error("Select Successfully!",page);
     }
 
     //删除
