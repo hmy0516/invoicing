@@ -65,4 +65,9 @@ public class PurchorderController {
         int temp = purchorderService.updateOne(purchorder);
         return temp;
     }
+    @PutMapping("/purchorder/updateStatus")
+    public int updateStatus(@RequestBody PurchorderParam purchorderParam){
+        int temp = purchorderService.updateStatus(purchorderParam.getI_pono(),purchorderParam.getI_status());
+        return temp;
+    }
 }

@@ -53,4 +53,10 @@ public class PurchorderServiceImpl implements PurchorderService {
     public int updateOne(Purchorder purchorder) {
         return purchorderMapper.updateOne(purchorder);
     }
+
+    @Override
+    public int updateStatus(Long i_pono, int i_status) {
+        return purchorderMapper.updateStatus(i_pono,i_status);
+    }
+
 }

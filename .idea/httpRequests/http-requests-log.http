@@ -1,3 +1,186 @@
+DELETE http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":1000000002,"c_gid":"bcd12345","i_status":null}
+
+<> 2019-06-13T045701.200.json
+
+###
+
+PUT http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":1000000002,"c_uuid":"123456","dt_dt":"2019-06-11 00:34:26","dt_begin":"2019-06-11 00:34:30","dt_end":"2019-06-12 00:34:33","c_clerk":"czy12345","c_vendor":"gys123456","c_base":"ck123456","c_sale":"cgy12345","c_check":"c5630","dt_check":"2019-06-11 00:36:00","c_checkout":"fsh12345","dt_checkout":"2019-06-11 00:36:25","c_invalid":"zfr12345","dt_invalid":"2019-06-11 00:37:46","c_comment":"测试12343","i_bno":123456,"i_status":1}
+
+<> 2019-06-13T045303.200.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":1000000002,"c_uuid":"123456","dt_dt":"2019-06-11 00:34:26","dt_begin":"2019-06-11 00:34:30","dt_end":"2019-06-12 00:34:33","c_clerk":"czy12345","c_vendor":"gys123456","c_base":"ck123456","c_sale":"cgy12345","c_check":"c5630","dt_check":"2019-06-11 00:36:00","c_checkout":"fsh12345","dt_checkout":"2019-06-11 00:36:25","c_invalid":"zfr12345","dt_invalid":"2019-06-11 00:37:46","c_comment":"测试测试","i_bno":123456,"i_status":0,"purchorderdetailList":[{"i_pono":1000000002,"c_gid":"45656456","f_pquant":5.0000,"c_unit":"只","f_price":1.0000,"f_amount":5.0000,"c_comment":"测试参数"},{"i_pono":1000000002,"c_gid":"abc123456","f_pquant":20.0000,"c_unit":"个","f_price":1.5000,"f_amount":30.0000,"c_comment":"测试"},{"i_pono":1000000002,"c_gid":"bcd12345","f_pquant":10.0000,"c_unit":"件","f_price":2.5000,"f_amount":25.0000,"c_comment":"测试"}]}
+
+<> 2019-06-13T044622.200.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":1000000002,"c_uuid":"123456","dt_dt":"2019-06-11 00:34:26","dt_begin":"2019-06-11 00:34:30","dt_end":"2019-06-12 00:34:33","c_clerk":"czy12345","c_vendor":"gys123456","c_base":"ck123456","c_sale":"cgy12345","c_check":"c5630","dt_check":"2019-06-11 00:36:00","c_checkout":"fsh12345","dt_checkout":"2019-06-11 00:36:25","c_invalid":"zfr12345","dt_invalid":"2019-06-11 00:37:46","c_comment":"测试测试","i_bno":123456,"i_status":0,"purchorderdetailList":[{"i_pono":1000000002,"c_gid":"45656456","f_pquant":5.0000,"c_unit":"只","f_price":1.0000,"f_amount":5.0000,"c_comment":"测试参数"},{"i_pono":1000000002,"c_gid":"abc123456","f_pquant":20.0000,"c_unit":"个","f_price":1.5000,"f_amount":30.0000,"c_comment":"测试"},{"i_pono":1000000002,"c_gid":"bcd12345","f_pquant":10.0000,"c_unit":"件","f_price":2.5000,"f_amount":25.0000,"c_comment":"测试"}]}
+
+<> 2019-06-13T044559.500.json
+
+###
+
+GET http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "2019-06-11 08:34:26",             "dt_begin": "2019-06-11 08:34:30",             "dt_end": "2019-06-12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019-06-11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019-06-11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019-06-11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T044148.200.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "2019-06-11 08:34:26",             "dt_begin": "2019-06-11 08:34:30",             "dt_end": "2019-06-12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019-06-11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019-06-11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019-06-11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T044004.500.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "2019-06-11 08:34:26",             "dt_begin": "2019-06-11 08:34:30",             "dt_end": "2019-06-12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019-06-11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019-06-11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019-06-11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T043754.500.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "2019-06-11 08:34:26",             "dt_begin": "2019-06-11 08:34:30",             "dt_end": "2019-06-12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019-06-11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019-06-11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019-06-11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T035448.500.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "2019-06-11 08:34:26",             "dt_begin": "2019-06-11 08:34:30",             "dt_end": "2019-06-12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019-06-11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019-06-11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019-06-11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T114245.500.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "2019-06-11 08:34:26",             "dt_begin": "2019-06-11 08:34:30",             "dt_end": "2019-06-12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019-06-11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019-06-11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019-06-11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T113306.500.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+ {             "c_uuid": "123456",             "i_pono": "00000000001000000001",             "dt_dt": "2019-06-11 08:34:26",             "dt_begin": "2019-06-11 08:34:30",             "dt_end": "2019-06-12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019-06-11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019-06-11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019-06-11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T113242.500.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+  {             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "2019/6/11 08:34:26",             "dt_begin": "2019/6/11 08:34:30",             "dt_end": "2019/6/12 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "2019/6/11 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "2019/6/11 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "2019/6/11 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T112747.400.json
+
+###
+
+POST http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+ {             "c_uuid": "123456",             "i_pono": "00000000001000000002",             "dt_dt": "11/6/2019 08:34:26",             "dt_begin": "11/6/2019 08:34:30",             "dt_end": "12/6/2019 08:34:33",             "c_clerk": "czy12345",             "c_vendor": "gys123456",             "c_base": "ck123456",             "c_sale": "cgy12345",             "c_check": "c5630",             "dt_check": "11/6/2019 08:36:00",             "c_checkout": "fsh12345",             "dt_checkout": "11/6/2019 08:36:25",             "c_invalid": "zfr12345",             "dt_invalid": "11/6/2019 08:37:46",             "c_comment": "测试测试",             "i_bno": "0000123456",             "i_status": "0"         }
+
+<> 2019-06-13T112503.400.json
+
+###
+
+PUT http://localhost:8080/purchorder/updateStatus
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":"00000000001000000001","i_status":0,"c_gid":""}
+
+<> 2019-06-13T111858.200.json
+
+###
+
+GET http://localhost:8080/purchorder/updateStatus
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":"00000000001000000001","i_status":0,"c_gid":""}
+
+<> 2019-06-13T111831.400.json
+
+###
+
+GET http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":"00000000001000000001","i_status":0,"c_gid":""}
+
+###
+
+PUT http://localhost:8080/purchorder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+{"i_pono":"00000000001000000001","i_status":0,"c_gid":""}
+
+###
+
 GET http://localhost:8080/purchorder/00000000001000000001
 Accept: */*
 Cache-Control: no-cache
@@ -361,183 +544,6 @@ Content-Type: utf-8
 Transfer-Encoding: utf-8
 
 {"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=utf-8
-Content-Type: utf-8
-Transfer-Encoding: utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=utf-8
-Content-Type: utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T032257.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-Content-Type: charset=utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T020924.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-Content-Encoding: UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T020711.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T020550.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T015903.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T015752.200.json
-
-###
-
-POST http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T014441.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
-
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T014356.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T014342.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
-
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T014245.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json
-
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T013649.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json
-
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-POST http://localhost:8080/department
-Accept: */*
-content-type: application/json
-
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T112337.200.json
-
-###
-
-POST http://localhost:8080/department
-Accept: */*
-content-type: application/json
-
-{"cDid"="d008", "cDepartment"="销售部", cComment="插入测试"}
-
-<> 2019-06-05T112112.400.json
-
-###
-
-POST http://localhost:8080/department
-Accept: */*
-content-type: application/json
-
-{"cDid"="d008", "cDepartment"="销售部", cComment="插入测试"}
-
-<> 2019-06-05T111739.500.json
 
 ###
 
