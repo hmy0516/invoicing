@@ -34,7 +34,7 @@ public class SaleOrderDetailServiceImpl implements SaleOrderDetailService {
     }
 
     @Override
-    public SaleOrderDetail findOrderByNo(Integer iNo) {
+    public SaleOrderDetail findOrderByNo(Long iNo) {
         return detailMapper.findOrderByNo(iNo);
     }
 

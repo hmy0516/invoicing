@@ -1,517 +1,600 @@
-POST http://localhost:8080/showAllOrder
+GET http://localhost:8080/sale/order?pageNum=2&pageSize=2
 Accept: */*
 Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
 Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"iNo":"10001","dtDt":"2019-06-12"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-12T024328.200.json
+<> 2019-06-13T042505.200.json
 
 ###
 
-POST http://localhost:8080/showAllOrder
+GET http://localhost:8080/sale/order?pageNum=2&pageSize=2
 Accept: */*
 Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
 Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"iNo":"10001","dtDt":"2019-06-12"}
+{"iNo":"","dtDt":""}
+
+<> 2019-06-13T042412.200.json
 
 ###
 
-POST http://localhost:8080/login
+GET http://localhost:8080/sale/order?pageNum=2&pageSize=2
 Accept: */*
 Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
 Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"username":"a001","password":"123456"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-07T062111.200.json
+<> 2019-06-13T033602.200.json
 
 ###
 
-POST http://localhost:8080/login
+GET http://localhost:8080/sale/order?pageNum=2&pageSize=2
 Accept: */*
 Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
 Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-username="a001",password="123456"
+{"iNo":"","dtDt":""}
 
-<> 2019-06-07T054959.400.json
-
-###
-
-POST http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d011","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T035517.200.json
+<> 2019-06-13T033542.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=2&size=3
 Accept: */*
-Content-Type: application/json
-
-{"cDid":"d010","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T035201.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T035121.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T034755.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T034635.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T034116.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-Content-Type: UTF-8
-content: charset=UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T034043.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-Content-Type: UTF-8
-content: charset=UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T032749.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-Content-Type: charset=UTF-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T032635.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=utf-8
-Content-Type: utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T032459.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=utf-8
-Content-Type: utf-8
-Transfer-Encoding: utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=utf-8
-Content-Type: utf-8
-Transfer-Encoding: utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=utf-8
-Content-Type: utf-8
-Transfer-Encoding: utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json;charset=utf-8
-Content-Type: utf-8
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T032257.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
-Content-Type: charset=utf-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-05T020924.200.json
+<> 2019-06-13T033305.200.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=1&size=3
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
-Content-Encoding: UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-05T020711.200.json
+<> 2019-06-13T033252.200.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=3&size=3
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-05T020550.200.json
+<> 2019-06-13T033237.200.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=3&size=2
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
+
+<> 2019-06-13T033226.200.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=3&size=2
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-05T015903.200.json
+<> 2019-06-13T033221.200.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=2&size=2
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-05T015752.200.json
+<> 2019-06-13T033209.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=1&size=2
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-05T014441.200.json
+<> 2019-06-13T033143.200.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=1&size=2
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":""}
 
-<> 2019-06-05T014356.200.json
+<> 2019-06-13T033113.400.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=1&size=2
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12"}
 
-<> 2019-06-05T014342.200.json
+<> 2019-06-13T033026.400.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order?start=1&size=2
 Accept: */*
+Cache-Control: no-cache
 content-type: application/json;charset=UTF-8
-Accept-Language: fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5
-Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12"}
 
-<> 2019-06-05T014245.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-content-type: application/json
-
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T013649.200.json
+<> 2019-06-13T033002.400.json
 
 ###
 
-PUT http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12","start":"1","size":"2"}
+
+<> 2019-06-13T032907.400.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d008","cDepartment":"销售部", "cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12"}{"start":"1","size":"2"}
 
-<> 2019-06-05T112337.200.json
+<> 2019-06-13T032737.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid"="d008", "cDepartment"="销售部", cComment="插入测试"}
+{"iNo":"","dtDt":"2019-6-12","start":"1","size":"2"}
 
-<> 2019-06-05T112112.400.json
+<> 2019-06-13T032705.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid"="d008", "cDepartment"="销售部", cComment="插入测试"}
+{"iNo":"","dtDt":"2019-6-12","start":"1","size":"2"}
 
-<> 2019-06-05T111739.500.json
+<> 2019-06-13T032436.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+{"iNo":"","dtDt":"2019-6-14"}
 
-<> 2019-06-05T111448.500.json
+<> 2019-06-13T032305.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{'cDid'='d004', 'cDepartment'='销售部', 'cComment'='插入测试'}
+{"iNo":"","dtDt":"2019-6-12"}
 
-<> 2019-06-05T111416.500.json
+<> 2019-06-13T032236.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{'cDid'='d004', 'cDepartment'='销售部', 'cComment'='插入测试'}
+{"iNo":"","dtDt":"2019-6-13"}
 
-<> 2019-06-05T111411.500.json
+<> 2019-06-13T032102.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+{"iNo":"","dtDt":"2019-6-13"}
 
-<> 2019-06-05T111346.500.json
+<> 2019-06-13T032015.200.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-department{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+{"iNo":"","dtDt":"2019-6-13"}
 
-<> 2019-06-05T111241.500.json
+<> 2019-06-13T031952.400.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-Department{cDid='d004', cDepartment='销售部', cComment='插入测试'}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T111220.500.json
+<> 2019-06-13T031928.200.json
 
 ###
 
-GET http://localhost:8080/department/d003
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T111134.200.txt
+<> 2019-06-13T031644.500.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T110936.500.json
+<> 2019-06-13T031610.400.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T110120.500.json
+<> 2019-06-13T031509.500.json
 
 ###
 
-POST http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDid":"d004","cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T104720.500.json
+<> 2019-06-13T031222.500.json
 
 ###
 
-GET http://localhost:8080/department/d003
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T104552.200.txt
+<> 2019-06-13T031023.500.json
 
 ###
 
-GET http://localhost:8080/department/d003
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T104415.500.json
+<> 2019-06-13T025423.500.json
 
 ###
 
-GET http://localhost:8080/department/d003
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T103951.500.json
+<> 2019-06-13T025419.500.json
 
 ###
 
-GET http://localhost:8080/department
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T103909.200.json
+<> 2019-06-13T024929.500.json
 
 ###
 
-GET http://localhost:8080/department/d003
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T103820.500.json
+<> 2019-06-13T024818.500.json
 
 ###
 
-GET http://localhost:8080/department/d00
+GET http://localhost:8080/sale/order
 Accept: */*
-content-type: application/json
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
 
-{"cDepartment":"销售部","cComment":"插入测试"}
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
 
-<> 2019-06-05T103809.500.json
+<> 2019-06-13T024609.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12 00:00:00"}
+
+<> 2019-06-13T023833.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12"}
+
+<> 2019-06-13T023759.400.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12"}
+
+<> 2019-06-13T023452.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12"}
+
+<> 2019-06-13T023232.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12"}
+
+<> 2019-06-13T022726.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12"}
+
+<> 2019-06-13T022324.400.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12"}
+
+<> 2019-06-13T022227.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-6-12"}
+
+<> 2019-06-13T021846.400.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":""}
+
+<> 2019-06-13T020631.200.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-06-12"}
+
+<> 2019-06-13T020258.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-06-12"}
+
+<> 2019-06-13T020132.500.json
+
+###
+
+GET http://localhost:8080/sale/order
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-06-12"}
+
+<> 2019-06-13T020103.500.json
+
+###
+
+GET http://localhost:8080/showAllOrder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":"2019-06-12"}
+
+<> 2019-06-13T015321.500.json
+
+###
+
+GET http://localhost:8080/showAllOrder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"201906120001","dtDt":""}
+
+<> 2019-06-13T015245.200.json
+
+###
+
+GET http://localhost:8080/showAllOrder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":""}
+
+<> 2019-06-13T121646.200.json
+
+###
+
+GET http://localhost:8080/showAllOrder
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json;charset=UTF-8
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+
+{"iNo":"","dtDt":""}
+
+<> 2019-06-13T121314.200.json
 
 ###
 

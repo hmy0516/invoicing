@@ -12,7 +12,7 @@ public interface SaleOrderDetailService {
 
     SaleOrderDetail selectByPrimaryKey(SaleOrderDetailKey key);
 
-    SaleOrderDetail findOrderByNo(Integer iNo);
+    SaleOrderDetail findOrderByNo(Long iNo);
 
     int updateByPrimaryKeySelective(SaleOrderDetail record);
 

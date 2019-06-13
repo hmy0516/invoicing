@@ -46,7 +46,7 @@
         </javaClientGenerator>
 
         <!-- 指定数据库表 -->
-        <table schema="invoicing" tableName="t_lsc_saleorder" domainObjectName="SaleOrder"
+        <table schema="invoicing" tableName="t_lsc_saleorderdetail" domainObjectName="SaleOrderDetail"
                enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
         <!--<table schema="db_wechat" tableName="t_automessage"
