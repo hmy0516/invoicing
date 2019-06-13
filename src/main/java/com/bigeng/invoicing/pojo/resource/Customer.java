@@ -1,11 +1,11 @@
 package com.bigeng.invoicing.pojo.resource;
 
-public class Vendor {
+public class Customer {
     private String cId;
 
     private String cName;
 
-    private String cVclass;
+    private String cAreaid;
 
     private String cAddr;
 
@@ -25,17 +25,8 @@ public class Vendor {
 
     private String cSale;
 
-    private String cBank;
+    private Integer iStatus;
 
-    private String cBacc;
-
-    private String cBlpic;
-
-    private String cCpic;
-
-    private Byte iStatus;
-
-    private String cComment;
 
     public String getcId() {
         return cId;
@@ -53,12 +44,12 @@ public class Vendor {
         this.cName = cName;
     }
 
-    public String getcVclass() {
-        return cVclass;
+    public String getcAreaid() {
+        return cAreaid;
     }
 
-    public void setcVclass(String cVclass) {
-        this.cVclass = cVclass;
+    public void setcAreaid(String cAreaid) {
+        this.cAreaid = cAreaid;
     }
 
     public String getcAddr() {
@@ -133,51 +124,11 @@ public class Vendor {
         this.cSale = cSale;
     }
 
-    public String getcBank() {
-        return cBank;
-    }
-
-    public void setcBank(String cBank) {
-        this.cBank = cBank;
-    }
-
-    public String getcBacc() {
-        return cBacc;
-    }
-
-    public void setcBacc(String cBacc) {
-        this.cBacc = cBacc;
-    }
-
-    public String getcBlpic() {
-        return cBlpic;
-    }
-
-    public void setcBlpic(String cBlpic) {
-        this.cBlpic = cBlpic;
-    }
-
-    public String getcCpic() {
-        return cCpic;
-    }
-
-    public void setcCpic(String cCpic) {
-        this.cCpic = cCpic;
-    }
-
-    public Byte getiStatus() {
+    public Integer getiStatus() {
         return iStatus;
     }
 
-    public void setiStatus(Byte iStatus) {
+    public void setiStatus(Integer iStatus) {
         this.iStatus = iStatus;
-    }
-
-    public String getcComment() {
-        return cComment;
-    }
-
-    public void setcComment(String cComment) {
-        this.cComment = cComment;
     }
 }
