@@ -2,13 +2,11 @@ package com.bigeng.invoicing.controller.enterprise;
 
 import com.bigeng.invoicing.pojo.RespMsg;
 import com.bigeng.invoicing.pojo.enterprise.Department;
-import com.bigeng.invoicing.service.enterprise.DepartmentService;
 import com.bigeng.invoicing.service.enterprise.impl.DepartmentServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -33,7 +31,6 @@ public class DepartmentController {
     @DeleteMapping("/department/{id}")
     public int deleteOne(@PathVariable("id")String cDid){
         int num = departmentServiceImpl.deleteOne(cDid);
-        System.out.println(num);
         return num;
     }
 

@@ -22,7 +22,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public int deleteOne(String cDid) {
-        System.out.println(cDid);
         departmentMapper.deleteOne(cDid);
         return 1;
     }
