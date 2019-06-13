@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.base.SaleOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.bigeng.invoicing.pojo.base.SaleOrder" >
+    <id column="i_no" property="iNo" jdbcType="BIGINT" />
+    <id column="dt_dt" property="dtDt" jdbcType="DATE" />
+    <result column="c_uuid" property="cUuid" jdbcType="VARCHAR" />
+    <result column="c_cid" property="cCid" jdbcType="VARCHAR" />
+    <result column="c_clerk" property="cClerk" jdbcType="VARCHAR" />
+    <result column="c_check" property="cCheck" jdbcType="VARCHAR" />
+    <result column="dt_check" property="dtCheck" jdbcType="TIMESTAMP" />
+    <result column="c_checkout" property="cCheckout" jdbcType="VARCHAR" />
+    <result column="dt_checkout" property="dtCheckout" jdbcType="TIMESTAMP" />
+    <result column="c_invalid" property="cInvalid" jdbcType="VARCHAR" />
+    <result column="dt_invalid" property="dtInvalid" jdbcType="TIMESTAMP" />
+    <result column="c_comment" property="cComment" jdbcType="VARCHAR" />
+    <result column="i_bono" property="iBono" jdbcType="INTEGER" />
+    <result column="i_status" property="iStatus" jdbcType="INTEGER" />
+    <collection property="detailList" column="i_no" ofType="com.bigeng.invoicing.pojo.base.SaleOrderDetail"
+                select="com.bigeng.invoicing.mapper.base.SaleOrderDetailMapper.findOrderByNo"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    i_no, dt_dt, c_uuid, c_cid, c_clerk, c_check, dt_check, c_checkout, dt_checkout,
+    c_invalid, dt_invalid, c_comment, i_bono, i_status
+  </sql>
+  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderKey" >
+    select
+    <include refid="Base_Column_List" />
+    from t_lsc_saleorder
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and dt_dt = #{dtDt,jdbcType=DATE}
+  </select>-->
+  <select id="selectByKey" resultMap="BaseResultMap" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderKey" >
+    select
+    <include refid="Base_Column_List" />
+    from t_lsc_saleorder
+    <where>
+      <if test="iNo !=null and iNo!='' ">
+        and i_no = #{iNo,jdbcType=BIGINT}
+      </if>
+      <if test="dtDt !=null">
+        and dt_dt = #{dtDt,jdbcType=DATE}
+      </if>
+    </where>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderKey" >
+    delete from t_lsc_saleorder
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and dt_dt = #{dtDt,jdbcType=DATE}
+  </delete>
+  <insert id="insert" parameterType="com.bigeng.invoicing.pojo.base.SaleOrder" >
+    insert into t_lsc_saleorder (i_no, dt_dt, c_uuid,
+      c_cid, c_clerk, c_check, 
+      dt_check, c_checkout, dt_checkout, 
+      c_invalid, dt_invalid, c_comment, 
+      i_bono, i_status)
+    values (#{iNo,jdbcType=BIGINT}, #{dtDt,jdbcType=DATE}, #{cUuid,jdbcType=VARCHAR}, 
+      #{cCid,jdbcType=VARCHAR}, #{cClerk,jdbcType=VARCHAR}, #{cCheck,jdbcType=VARCHAR}, 
+      #{dtCheck,jdbcType=TIMESTAMP}, #{cCheckout,jdbcType=VARCHAR}, #{dtCheckout,jdbcType=TIMESTAMP}, 
+      #{cInvalid,jdbcType=VARCHAR}, #{dtInvalid,jdbcType=TIMESTAMP}, #{cComment,jdbcType=VARCHAR}, 
+      #{iBono,jdbcType=INTEGER}, #{iStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bigeng.invoicing.pojo.base.SaleOrder" >
+    insert into t_lsc_saleorder
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="iNo != null" >
+        i_no,
+      </if>
+      <if test="dtDt != null" >
+        dt_dt,
+      </if>
+      <if test="cUuid != null" >
+        c_uuid,
+      </if>
+      <if test="cCid != null" >
+        c_cid,
+      </if>
+      <if test="cClerk != null" >
+        c_clerk,
+      </if>
+      <if test="cCheck != null" >
+        c_check,
+      </if>
+      <if test="dtCheck != null" >
+        dt_check,
+      </if>
+      <if test="cCheckout != null" >
+        c_checkout,
+      </if>
+      <if test="dtCheckout != null" >
+        dt_checkout,
+      </if>
+      <if test="cInvalid != null" >
+        c_invalid,
+      </if>
+      <if test="dtInvalid != null" >
+        dt_invalid,
+      </if>
+      <if test="cComment != null" >
+        c_comment,
+      </if>
+      <if test="iBono != null" >
+        i_bono,
+      </if>
+      <if test="iStatus != null" >
+        i_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="iNo != null" >
+        #{iNo,jdbcType=BIGINT},
+      </if>
+      <if test="dtDt != null" >
+        #{dtDt,jdbcType=DATE},
+      </if>
+      <if test="cUuid != null" >
+        #{cUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="cCid != null" >
+        #{cCid,jdbcType=VARCHAR},
+      </if>
+      <if test="cClerk != null" >
+        #{cClerk,jdbcType=VARCHAR},
+      </if>
+      <if test="cCheck != null" >
+        #{cCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="dtCheck != null" >
+        #{dtCheck,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cCheckout != null" >
+        #{cCheckout,jdbcType=VARCHAR},
+      </if>
+      <if test="dtCheckout != null" >
+        #{dtCheckout,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cInvalid != null" >
+        #{cInvalid,jdbcType=VARCHAR},
+      </if>
+      <if test="dtInvalid != null" >
+        #{dtInvalid,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cComment != null" >
+        #{cComment,jdbcType=VARCHAR},
+      </if>
+      <if test="iBono != null" >
+        #{iBono,jdbcType=INTEGER},
+      </if>
+      <if test="iStatus != null" >
+        #{iStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bigeng.invoicing.pojo.base.SaleOrder" >
+    update t_lsc_saleorder
+    <set >
+      <if test="cUuid != null" >
+        c_uuid = #{cUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="cCid != null" >
+        c_cid = #{cCid,jdbcType=VARCHAR},
+      </if>
+      <if test="cClerk != null" >
+        c_clerk = #{cClerk,jdbcType=VARCHAR},
+      </if>
+      <if test="cCheck != null" >
+        c_check = #{cCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="dtCheck != null" >
+        dt_check = #{dtCheck,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cCheckout != null" >
+        c_checkout = #{cCheckout,jdbcType=VARCHAR},
+      </if>
+      <if test="dtCheckout != null" >
+        dt_checkout = #{dtCheckout,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cInvalid != null" >
+        c_invalid = #{cInvalid,jdbcType=VARCHAR},
+      </if>
+      <if test="dtInvalid != null" >
+        dt_invalid = #{dtInvalid,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cComment != null" >
+        c_comment = #{cComment,jdbcType=VARCHAR},
+      </if>
+      <if test="iBono != null" >
+        i_bono = #{iBono,jdbcType=INTEGER},
+      </if>
+      <if test="iStatus != null" >
+        i_status = #{iStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and dt_dt = #{dtDt,jdbcType=DATE}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.base.SaleOrder" >
+    update t_lsc_saleorder
+    set c_uuid = #{cUuid,jdbcType=VARCHAR},
+      c_cid = #{cCid,jdbcType=VARCHAR},
+      c_clerk = #{cClerk,jdbcType=VARCHAR},
+      c_check = #{cCheck,jdbcType=VARCHAR},
+      dt_check = #{dtCheck,jdbcType=TIMESTAMP},
+      c_checkout = #{cCheckout,jdbcType=VARCHAR},
+      dt_checkout = #{dtCheckout,jdbcType=TIMESTAMP},
+      c_invalid = #{cInvalid,jdbcType=VARCHAR},
+      dt_invalid = #{dtInvalid,jdbcType=TIMESTAMP},
+      c_comment = #{cComment,jdbcType=VARCHAR},
+      i_bono = #{iBono,jdbcType=INTEGER},
+      i_status = #{iStatus,jdbcType=INTEGER}
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and dt_dt = #{dtDt,jdbcType=DATE}
+  </update>
+</mapper>
