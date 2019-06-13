@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.resource.CustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.bigeng.invoicing.pojo.resource.Customer" >
+    <id column="c_id" property="cId" jdbcType="VARCHAR" />
+    <result column="c_name" property="cName" jdbcType="VARCHAR" />
+    <result column="c_areaid" property="cAreaid" jdbcType="VARCHAR" />
+    <result column="c_addr" property="cAddr" jdbcType="VARCHAR" />
+    <result column="c_tele" property="cTele" jdbcType="VARCHAR" />
+    <result column="c_fax" property="cFax" jdbcType="VARCHAR" />
+    <result column="c_zip" property="cZip" jdbcType="VARCHAR" />
+    <result column="c_gcode" property="cGcode" jdbcType="VARCHAR" />
+    <result column="c_corporation" property="cCorporation" jdbcType="VARCHAR" />
+    <result column="c_contacter" property="cContacter" jdbcType="VARCHAR" />
+    <result column="c_mphone" property="cMphone" jdbcType="VARCHAR" />
+    <result column="c_sale" property="cSale" jdbcType="VARCHAR" />
+    <result column="i_status" property="iStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_lsc_customer
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Customer" >
+    <selectKey resultType="java.lang.String" keyProperty="cId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_lsc_customer (c_name, c_areaid, c_addr, 
+      c_tele, c_fax, c_zip, 
+      c_gcode, c_corporation, c_contacter, 
+      c_mphone, c_sale, i_status
+      )
+    values (#{cName,jdbcType=VARCHAR}, #{cAreaid,jdbcType=VARCHAR}, #{cAddr,jdbcType=VARCHAR}, 
+      #{cTele,jdbcType=VARCHAR}, #{cFax,jdbcType=VARCHAR}, #{cZip,jdbcType=VARCHAR}, 
+      #{cGcode,jdbcType=VARCHAR}, #{cCorporation,jdbcType=VARCHAR}, #{cContacter,jdbcType=VARCHAR}, 
+      #{cMphone,jdbcType=VARCHAR}, #{cSale,jdbcType=VARCHAR}, #{iStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Customer" >
+    update t_lsc_customer
+    set c_name = #{cName,jdbcType=VARCHAR},
+      c_areaid = #{cAreaid,jdbcType=VARCHAR},
+      c_addr = #{cAddr,jdbcType=VARCHAR},
+      c_tele = #{cTele,jdbcType=VARCHAR},
+      c_fax = #{cFax,jdbcType=VARCHAR},
+      c_zip = #{cZip,jdbcType=VARCHAR},
+      c_gcode = #{cGcode,jdbcType=VARCHAR},
+      c_corporation = #{cCorporation,jdbcType=VARCHAR},
+      c_contacter = #{cContacter,jdbcType=VARCHAR},
+      c_mphone = #{cMphone,jdbcType=VARCHAR},
+      c_sale = #{cSale,jdbcType=VARCHAR},
+      i_status = #{iStatus,jdbcType=INTEGER}
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select c_id, c_name, c_areaid, c_addr, c_tele, c_fax, c_zip, c_gcode, c_corporation, 
+    c_contacter, c_mphone, c_sale, i_status
+    from t_lsc_customer
+    where c_id = #{cId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select c_id, c_name, c_areaid, c_addr, c_tele, c_fax, c_zip, c_gcode, c_corporation, 
+    c_contacter, c_mphone, c_sale, i_status
+    from t_lsc_customer
+  </select>
+</mapper>

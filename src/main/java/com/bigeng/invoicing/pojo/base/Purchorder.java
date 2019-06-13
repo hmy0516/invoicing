@@ -1,22 +1,30 @@
 package com.bigeng.invoicing.pojo.base;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.sql.Timestamp;
 import java.util.List;
 
 public class Purchorder {
     private Long i_pono;
     private String c_uuid;
+    @JsonFormat( pattern="yyyy-MM-dd HH:mm:ss")
     private Timestamp dt_dt;
+    @JsonFormat( pattern="yyyy-MM-dd HH:mm:ss")
     private Timestamp dt_begin;
+    @JsonFormat( pattern="yyyy-MM-dd HH:mm:ss")
     private Timestamp dt_end;
     private String c_clerk;
     private String c_vendor;
     private String c_base;
     private String c_sale;
     private String c_check;
+    @JsonFormat( pattern="yyyy-MM-dd HH:mm:ss")
     private Timestamp dt_check;
     private String c_checkout;
+    @JsonFormat( pattern="yyyy-MM-dd HH:mm:ss")
     private Timestamp dt_checkout;
     private String c_invalid;
+    @JsonFormat( pattern="yyyy-MM-dd HH:mm:ss")
     private Timestamp dt_invalid;
     private String c_comment;
     private Long i_bno;
