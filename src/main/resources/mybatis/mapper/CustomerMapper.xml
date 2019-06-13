@@ -18,18 +18,18 @@
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_lsc_customer
-    where c_id = #{cId,jdbcType=VARCHAR}
+    where c_id in
+    <foreach collection="cids" separator="," open="(" close=")" item="id">
+      #{id}
+    </foreach>
   </delete>
   <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Customer" >
-    <selectKey resultType="java.lang.String" keyProperty="cId" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into t_lsc_customer (c_name, c_areaid, c_addr, 
+    insert into t_lsc_customer (c_id,c_name, c_areaid, c_addr,
       c_tele, c_fax, c_zip, 
       c_gcode, c_corporation, c_contacter, 
       c_mphone, c_sale, i_status
       )
-    values (#{cName,jdbcType=VARCHAR}, #{cAreaid,jdbcType=VARCHAR}, #{cAddr,jdbcType=VARCHAR}, 
+    values (#{cId,jdbcType=VARCHAR},#{cName,jdbcType=VARCHAR}, #{cAreaid,jdbcType=VARCHAR}, #{cAddr,jdbcType=VARCHAR},
       #{cTele,jdbcType=VARCHAR}, #{cFax,jdbcType=VARCHAR}, #{cZip,jdbcType=VARCHAR}, 
       #{cGcode,jdbcType=VARCHAR}, #{cCorporation,jdbcType=VARCHAR}, #{cContacter,jdbcType=VARCHAR}, 
       #{cMphone,jdbcType=VARCHAR}, #{cSale,jdbcType=VARCHAR}, #{iStatus,jdbcType=INTEGER}
@@ -37,18 +37,44 @@
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Customer" >
     update t_lsc_customer
-    set c_name = #{cName,jdbcType=VARCHAR},
+    <set>
+      <if test="cName!=null">
+      c_name = #{cName,jdbcType=VARCHAR},
+      </if>
+      <if test="cAreaid!=null">
       c_areaid = #{cAreaid,jdbcType=VARCHAR},
+      </if>
+      <if test="cAddr!=null">
       c_addr = #{cAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="cTele!=null">
       c_tele = #{cTele,jdbcType=VARCHAR},
+      </if>
+      <if test="cFax!=null">
       c_fax = #{cFax,jdbcType=VARCHAR},
+      </if>
+      <if test="cZip!=null">
       c_zip = #{cZip,jdbcType=VARCHAR},
+      </if>
+      <if test="cGcode!=null">
       c_gcode = #{cGcode,jdbcType=VARCHAR},
+      </if>
+      <if test="cCorporation!=null">
       c_corporation = #{cCorporation,jdbcType=VARCHAR},
+      </if>
+      <if test="cContacter!=null">
       c_contacter = #{cContacter,jdbcType=VARCHAR},
+      </if>
+      <if test="cMphone!=null">
       c_mphone = #{cMphone,jdbcType=VARCHAR},
+      </if>
+      <if test="cSale!=null">
       c_sale = #{cSale,jdbcType=VARCHAR},
+      </if>
+      <if test="iStatus!=null">
       i_status = #{iStatus,jdbcType=INTEGER}
+      </if>
+    </set>
     where c_id = #{cId,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
@@ -61,5 +87,42 @@
     select c_id, c_name, c_areaid, c_addr, c_tele, c_fax, c_zip, c_gcode, c_corporation, 
     c_contacter, c_mphone, c_sale, i_status
     from t_lsc_customer
+  </select>
+
+  <select id="selectByPage" resultMap="BaseResultMap" >
+    select * from t_lsc_customer
+    <where>
+      <if test="name!=null">
+       and c_name like concat('%',#{name},'%')
+      </if>
+      <if test="addr!=null">
+        and c_addr like concat('%',#{addr},'%')
+      </if>
+      <if test="contacter!=null">
+        and c_contacter like concat('%',#{contacter},'%')
+      </if>
+      <if test="salename!=null">
+        and c_sale like concat('%',#{salename},'%')
+      </if>
+    </where>
+    limit #{start},#{size}
+  </select>
+
+  <select id="getPageCount" resultType="Long" >
+    select count(*) from t_lsc_customer
+    <where>
+      <if test="name!=null">
+        and c_name like concat('%',#{name},'%')
+      </if>
+      <if test="addr!=null">
+        and c_addr like concat('%',#{addr},'%')
+      </if>
+      <if test="contacter!=null">
+        and c_contacter like concat('%',#{contacter},'%')
+      </if>
+      <if test="salename!=null">
+        and c_sale like concat('%',#{salename},'%')
+      </if>
+    </where>
   </select>
 </mapper>

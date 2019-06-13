@@ -13,7 +13,7 @@
   <delete id="deleteByPrimaryKey" parameterType="map" >
     delete from t_lsc_vendor_goodsprice
     where c_gid = #{cGid,jdbcType=VARCHAR}
-      and c_vid = #{cVid,jdbcType=VARCHAR}
+      or c_vid = #{cVid,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Vendor_Goodsprice" >
     insert into t_lsc_vendor_goodsprice (c_gid, c_vid, f_price, 
@@ -25,11 +25,23 @@
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Vendor_Goodsprice" >
     update t_lsc_vendor_goodsprice
-    set f_price = #{fPrice,jdbcType=DECIMAL},
+    <set>
+      <if test="fPrice !=null">
+       f_price = #{fPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="dtBegin !=null">
       dt_begin = #{dtBegin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtEnd !=null">
       dt_end = #{dtEnd,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iStatus !=null">
       i_status = #{iStatus,jdbcType=TINYINT},
+      </if>
+      <if test="cComment !=null">
       c_comment = #{cComment,jdbcType=VARCHAR}
+     </if>
+    </set>
     where c_gid = #{cGid,jdbcType=VARCHAR}
       and c_vid = #{cVid,jdbcType=VARCHAR}
   </update>
@@ -42,5 +54,11 @@
   <select id="selectAll" resultMap="BaseResultMap" >
     select c_gid, c_vid, f_price, dt_begin, dt_end, i_status, c_comment
     from t_lsc_vendor_goodsprice
+  </select>
+  <select id="selectByPrimaryKeyWithC_gid" resultMap="BaseResultMap"  parameterType="String">
+    select * from t_lsc_vendor_goodsprice where c_gid = #{cGid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKeyWithC_Vid" resultMap="BaseResultMap"  parameterType="String">
+    select * from t_lsc_vendor_goodsprice where c_vid = #{cVid,jdbcType=VARCHAR}
   </select>
 </mapper>

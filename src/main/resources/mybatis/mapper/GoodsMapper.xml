@@ -16,35 +16,58 @@
     <result column="f_sprice" property="fSprice" jdbcType="DECIMAL" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from t_lsc_goods
-    where c_id = #{cId,jdbcType=VARCHAR}
+    delete from t_lsc_goods where c_id in
+    <foreach collection="cids" separator="," open="(" close=")" item="id">
+      #{id}
+    </foreach>
   </delete>
   <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Goods" >
-    <selectKey resultType="java.lang.String" keyProperty="cId" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into t_lsc_goods (c_desc, c_format, c_brand, 
+    insert into t_lsc_goods (c_id,c_desc, c_format, c_brand,
       c_comp, c_class, c_bunit, 
       f_expiration, c_code, c_qrcode, 
       f_pprice, f_sprice)
-    values (#{cDesc,jdbcType=VARCHAR}, #{cFormat,jdbcType=VARCHAR}, #{cBrand,jdbcType=VARCHAR}, 
+    values (#{cId,jdbcType=VARCHAR},#{cDesc,jdbcType=VARCHAR}, #{cFormat,jdbcType=VARCHAR}, #{cBrand,jdbcType=VARCHAR},
       #{cComp,jdbcType=VARCHAR}, #{cClass,jdbcType=VARCHAR}, #{cBunit,jdbcType=VARCHAR}, 
       #{fExpiration,jdbcType=DECIMAL}, #{cCode,jdbcType=VARCHAR}, #{cQrcode,jdbcType=VARCHAR}, 
       #{fPprice,jdbcType=DECIMAL}, #{fSprice,jdbcType=DECIMAL})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Goods" >
     update t_lsc_goods
-    set c_desc = #{cDesc,jdbcType=VARCHAR},
+    <set>
+      <if test="cDesc  !=null">
+     c_desc = #{cDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="cFormat  !=null">
       c_format = #{cFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="cBrand  !=null">
       c_brand = #{cBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="cComp !=null">
       c_comp = #{cComp,jdbcType=VARCHAR},
+      </if>
+      <if test="cClass !=null">
       c_class = #{cClass,jdbcType=VARCHAR},
+      </if>
+      <if test="cBunit!=null">
       c_bunit = #{cBunit,jdbcType=VARCHAR},
+      </if>
+      <if test="fExpiration!=null">
       f_expiration = #{fExpiration,jdbcType=DECIMAL},
+      </if>
+      <if test="cCode!=null">
       c_code = #{cCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cQrcode !=null">
       c_qrcode = #{cQrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fPprice !=null">
       f_pprice = #{fPprice,jdbcType=DECIMAL},
+      </if>
+      <if test="fSprice !=null">
       f_sprice = #{fSprice,jdbcType=DECIMAL}
+    </if>
+    </set>
     where c_id = #{cId,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
@@ -57,5 +80,42 @@
     select c_id, c_desc, c_format, c_brand, c_comp, c_class, c_bunit, f_expiration, c_code, 
     c_qrcode, f_pprice, f_sprice
     from t_lsc_goods
+  </select>
+
+  <select id="selectByPage" resultMap="BaseResultMap" >
+    select * from t_lsc_goods
+    <where>
+      <if test="name!=null">
+        and c_desc like concat('%',#{name},'%')
+      </if>
+      <if test="brand!=null">
+        and c_brand=#{brand}
+      </if>
+      <if test="comp!=null">
+        and c_comp like concat('%',#{comp},'%')
+      </if>
+      <if test="class!=null">
+        and c_class=#{class}
+      </if>
+    </where>
+    limit #{start},#{size}
+  </select>
+
+  <select id="getPageCount" resultType="Long" >
+    select count(*) from  t_lsc_goods
+    <where>
+      <if test="name!=null">
+        and c_desc like concat('%',#{name},'%')
+      </if>
+      <if test="brand!=null">
+        and c_brand=#{brand}
+      </if>
+      <if test="comp!=null">
+        and c_comp like concat('%',#{comp},'%')
+      </if>
+      <if test="classs!=null">
+        and c_class=#{classs}
+      </if>
+    </where>
   </select>
 </mapper>

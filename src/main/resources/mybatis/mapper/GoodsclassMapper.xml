@@ -8,19 +8,25 @@
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_lsc_goodsclass
-    where c_class = #{cClass,jdbcType=VARCHAR}
+    where c_class in
+    <foreach collection="cids" separator="," open="(" close=")" item="id">
+      #{id}
+    </foreach>
   </delete>
   <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Goodsclass" >
-    <selectKey resultType="java.lang.String" keyProperty="cClass" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into t_lsc_goodsclass (c_desc, i_idx)
-    values (#{cDesc,jdbcType=VARCHAR}, #{iIdx,jdbcType=TINYINT})
+    insert into t_lsc_goodsclass (c_class,c_desc, i_idx)
+    values (#{cClass,jdbcType=VARCHAR},#{cDesc,jdbcType=VARCHAR}, #{iIdx,jdbcType=TINYINT})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.resource.Goodsclass" >
     update t_lsc_goodsclass
-    set c_desc = #{cDesc,jdbcType=VARCHAR},
+    <set>
+      <if test="cDesc !=null">
+      c_desc = #{cDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="iIdx !=null">
       i_idx = #{iIdx,jdbcType=TINYINT}
+      </if>
+    </set>
     where c_class = #{cClass,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
@@ -31,5 +37,24 @@
   <select id="selectAll" resultMap="BaseResultMap" >
     select c_class, c_desc, i_idx
     from t_lsc_goodsclass
+  </select>
+
+  <select id="selectByPage" resultMap="BaseResultMap">
+    select * from t_lsc_goodsclass
+    <where>
+      <if test="name!=null">
+        and c_desc like concat('%',#{name},'%')
+      </if>
+    </where>
+    limit #{start},#{size}
+  </select>
+
+  <select id="getPageCount" resultType="Long">
+    select count(*) from t_lsc_goodsclass
+    <where>
+      <if test="name!=null">
+        and c_desc like concat('%',#{name},'%')
+      </if>
+    </where>
   </select>
 </mapper>
