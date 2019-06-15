@@ -94,8 +94,8 @@
       <if test="comp!=null">
         and c_comp like concat('%',#{comp},'%')
       </if>
-      <if test="class!=null">
-        and c_class=#{class}
+      <if test="classs!=null">
+        and c_class=#{classs}
       </if>
     </where>
     limit #{start},#{size}
