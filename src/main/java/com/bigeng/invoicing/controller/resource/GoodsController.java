@@ -78,11 +78,31 @@ public class GoodsController {
 
     }
 
+    @RequestMapping(value = "/sprice",method = RequestMethod.PUT)
+    public RespMsg updateSprice(@RequestBody Vendor_Goodsprice vendor_goodsprice){
+        if(vendor_goodspriceService.updateByPrimaryKey(vendor_goodsprice)==1){
+            return  RespMsg.ok("更改成功");
+        }
+        else{
+            return RespMsg.error("更改失败");
+        }
+    }
+
+    @RequestMapping(value = "/sprice",method = RequestMethod.POST)
+    public RespMsg addSprice(@RequestBody Vendor_Goodsprice vendor_goodsprice){
+        if(vendor_goodspriceService.insert(vendor_goodsprice)==1){
+            return RespMsg.ok("添加成功");
+        }
+        else {
+            return  RespMsg.error("添加失败");
+        }
+    }
+
     @RequestMapping(value = "/sprice",method = RequestMethod.GET)
     public RespMsg selectSprice(
             @RequestParam(defaultValue = "1") Integer page,
             @RequestParam(defaultValue = "10") Integer size,
-            Integer sort, String cGid, Integer status, String vid){
+            @RequestParam(defaultValue = "0") Integer sort, String cGid,@RequestParam(defaultValue = "0") Integer status, String vid){
         Map<String,Object> map=new HashMap<>();
         List<Vendor_Goodsprice> vendor_goodsprices=vendor_goodspriceService.selectByPrimaryKeyWithC_gid(page,size,sort,cGid,status,vid);
         map.put("vendor_goodsprices",vendor_goodsprices);

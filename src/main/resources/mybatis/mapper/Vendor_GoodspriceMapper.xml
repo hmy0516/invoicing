@@ -78,7 +78,7 @@
     limit #{start},#{size}
   </select>
   <select id="selectByPrimaryKeyWithC_GidCount" resultMap="BaseResultMap"  >
-    select * from t_lsc_vendor_goodsprice
+    select count(*) from t_lsc_vendor_goodsprice
     <where>
       <if test="status!=null">
         and i_status=#{status}
