@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.base.SaleOrderDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.bigeng.invoicing.pojo.base.SaleOrderDetail" >
+    <id column="i_no" property="iNo" jdbcType="BIGINT" />
+    <id column="c_gid" property="cGid" jdbcType="VARCHAR" />
+    <result column="f_quant" property="fQuant" jdbcType="DECIMAL" />
+    <result column="c_bunit" property="cBunit" jdbcType="VARCHAR" />
+    <result column="f_price" property="fPrice" jdbcType="DECIMAL" />
+    <result column="f_amount" property="fAmount" jdbcType="DECIMAL" />
+    <result column="c_comment" property="cComment" jdbcType="VARCHAR" />
+    <result column="dt_dt" property="dtDt" jdbcType="DATE" />
+    <association property="goods" column="c_gid" javaType="com.bigeng.invoicing.pojo.resource.Goods"
+                 select="com.bigeng.invoicing.mapper.resource.GoodsMapper.selectByPrimaryKey"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    i_no, c_gid, f_quant, c_bunit, f_price, f_amount, c_comment, dt_dt
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderDetailKey" >
+    select
+    <include refid="Base_Column_List" />
+    from t_lsc_saleorderdetail
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and c_gid = #{cGid,jdbcType=VARCHAR}
+  </select>
+  <select id="findOrderByNo" resultMap="BaseResultMap" parameterType="LONG" >
+    select
+    <include refid="Base_Column_List" />
+    from t_lsc_saleorderdetail
+    where i_no = #{iNo,jdbcType=BIGINT}
+    <!--<where>
+      <if test="_parameter !=null and _parameter !=''">
+        and i_no = #{_parameter,jdbcType=BIGINT}
+      </if>
+      &lt;!&ndash;<if test="cGid">
+        and c_gid = #{cGid,jdbcType=VARCHAR}
+      </if>&ndash;&gt;
+    </where>-->
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderDetailKey" >
+    delete from t_lsc_saleorderdetail
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and c_gid = #{cGid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderDetail" >
+    insert into t_lsc_saleorderdetail (i_no, c_gid, f_quant,
+      c_bunit, f_price, f_amount, 
+      c_comment, dt_dt)
+    values (#{iNo,jdbcType=BIGINT}, #{cGid,jdbcType=VARCHAR}, #{fQuant,jdbcType=DECIMAL}, 
+      #{cBunit,jdbcType=VARCHAR}, #{fPrice,jdbcType=DECIMAL}, #{fAmount,jdbcType=DECIMAL}, 
+      #{cComment,jdbcType=VARCHAR}, #{dtDt,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderDetail" >
+    insert into t_lsc_saleorderdetail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="iNo != null" >
+        i_no,
+      </if>
+      <if test="cGid != null" >
+        c_gid,
+      </if>
+      <if test="fQuant != null" >
+        f_quant,
+      </if>
+      <if test="cBunit != null" >
+        c_bunit,
+      </if>
+      <if test="fPrice != null" >
+        f_price,
+      </if>
+      <if test="fAmount != null" >
+        f_amount,
+      </if>
+      <if test="cComment != null" >
+        c_comment,
+      </if>
+      <if test="dtDt != null" >
+        dt_dt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="iNo != null" >
+        #{iNo,jdbcType=BIGINT},
+      </if>
+      <if test="cGid != null" >
+        #{cGid,jdbcType=VARCHAR},
+      </if>
+      <if test="fQuant != null" >
+        #{fQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="cBunit != null" >
+        #{cBunit,jdbcType=VARCHAR},
+      </if>
+      <if test="fPrice != null" >
+        #{fPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="fAmount != null" >
+        #{fAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cComment != null" >
+        #{cComment,jdbcType=VARCHAR},
+      </if>
+      <if test="dtDt != null" >
+        #{dtDt,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderDetail" >
+    update t_lsc_saleorderdetail
+    <set >
+      <if test="fQuant != null" >
+        f_quant = #{fQuant,jdbcType=DECIMAL},
+      </if>
+      <if test="cBunit != null" >
+        c_bunit = #{cBunit,jdbcType=VARCHAR},
+      </if>
+      <if test="fPrice != null" >
+        f_price = #{fPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="fAmount != null" >
+        f_amount = #{fAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cComment != null" >
+        c_comment = #{cComment,jdbcType=VARCHAR},
+      </if>
+      <if test="dtDt != null" >
+        dt_dt = #{dtDt,jdbcType=DATE},
+      </if>
+    </set>
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and c_gid = #{cGid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderDetail" >
+    update t_lsc_saleorderdetail
+    set f_quant = #{fQuant,jdbcType=DECIMAL},
+      c_bunit = #{cBunit,jdbcType=VARCHAR},
+      f_price = #{fPrice,jdbcType=DECIMAL},
+      f_amount = #{fAmount,jdbcType=DECIMAL},
+      c_comment = #{cComment,jdbcType=VARCHAR},
+      dt_dt = #{dtDt,jdbcType=DATE}
+    where i_no = #{iNo,jdbcType=BIGINT}
+      and c_gid = #{cGid,jdbcType=VARCHAR}
+  </update>
+</mapper>

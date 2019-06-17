@@ -3,7 +3,6 @@ package com.bigeng.invoicing.mapper.enterprise;
 import com.bigeng.invoicing.pojo.enterprise.Employee;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 

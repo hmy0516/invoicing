@@ -16,4 +16,9 @@ public class UsersServiceImpl implements UsersService {
     public Users queryUser(String id) {
         return usersMapper.queryUser(id);
     }
+
+    @Override
+    public Users login(String cNumber, String password) {
+        return usersMapper.login(cNumber,password);
+    }
 }
