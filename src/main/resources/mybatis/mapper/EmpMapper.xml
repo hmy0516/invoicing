@@ -20,14 +20,18 @@
         <result column="ts_ctime" property="tsCtime" jdbcType="TIMESTAMP" />
         <result column="c_dutyid" property="cDutyid" jdbcType="VARCHAR" />
         <result column="c_did" property="cDid" jdbcType="VARCHAR" />
+        <collection property="duty" column="c_dutyid" ofType="com.bigeng.invoicing.pojo.enterprise.Duty"
+                    select="com.bigeng.invoicing.mapper.enterprise.DutyMapper.selectByPrimaryKey"></collection>
+        <collection property="department" column="c_did" ofType="com.bigeng.invoicing.pojo.enterprise.Department"
+                    select="com.bigeng.invoicing.mapper.enterprise.DepartmentMapper.findOne"></collection>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from t_hr_employee where c_number in
+        delete from t_hr_employee where c_number in
         <foreach collection="cids" separator="," open="(" close=")" item="id">
             #{id}
         </foreach>
-  </delete>
-    <insert id="insert" parameterType="com.example.mybatis.pojo.Emp" >
+    </delete>
+    <insert id="insert" parameterType="com.bigeng.invoicing.pojo.enterprise.Employee" >
     insert into t_hr_employee (c_number, c_name, i_sex,
       c_education, c_id, c_address,
       c_mobile, c_linkman, c_lmmobile,
@@ -43,61 +47,61 @@
       #{tsCtime,jdbcType=TIMESTAMP}, #{cDutyid,jdbcType=VARCHAR}, #{cDid,jdbcType=VARCHAR}
       )
   </insert>
-    <update id="updateByPrimaryKey" parameterType="com.example.mybatis.pojo.Emp" >
-    update t_hr_employee
-    <set>
-       <if test="cName  !=null">
-         c_name = #{cName,jdbcType=VARCHAR},
-       </if>
-        <if test="iSex  !=null">
-      i_sex = #{iSex,jdbcType=TINYINT},
-        </if>
-        <if test="cEducation  !=null">
-      c_education = #{cEducation,jdbcType=VARCHAR},
-        </if>
-        <if test="cId  !=null">
-      c_id = #{cId,jdbcType=VARCHAR},
-        </if>
-        <if test="cAddress  !=null">
-      c_address = #{cAddress,jdbcType=VARCHAR},
-        </if>
-        <if test="cMobile  !=null">
-      c_mobile = #{cMobile,jdbcType=VARCHAR},
-        </if>
-        <if test="cLinkman  !=null">
-      c_linkman = #{cLinkman,jdbcType=VARCHAR},
-        </if>
-        <if test="cLmmobile  !=null">
-      c_lmmobile = #{cLmmobile,jdbcType=VARCHAR},
-        </if>
-        <if test="dtJoin !=null">
-      dt_join = #{dtJoin,jdbcType=TIMESTAMP},
-        </if>
-        <if test="dtLeft  !=null">
-      dt_left = #{dtLeft,jdbcType=TIMESTAMP},
-        </if>
-        <if test="iStatus  !=null">
-      i_status = #{iStatus,jdbcType=TINYINT},
-        </if>
-        <if test="cIdpic !=null">
-      c_idpic = #{cIdpic,jdbcType=VARCHAR},
-        </if>
-        <if test="cIdpic1  !=null">
-      c_idpic1 = #{cIdpic1,jdbcType=VARCHAR},
-        </if>
-        <if test="tsCtime  !=null">
-      c_pic = #{cPic,jdbcType=VARCHAR},
-      ts_ctime = #{tsCtime,jdbcType=TIMESTAMP},
-        </if>
-        <if test="cDutyid !=null">
-      c_dutyid = #{cDutyid,jdbcType=VARCHAR},
-        </if>
-        <if test="cDid !=null">
-      c_did = #{cDid,jdbcType=VARCHAR}
-        </if>
-    </set>
-    where c_number = #{cNumber,jdbcType=VARCHAR}
-  </update>
+    <update id="updateByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.enterprise.Employee" >
+        update t_hr_employee
+        <set>
+            <if test="cName  !=null">
+                c_name = #{cName,jdbcType=VARCHAR},
+            </if>
+            <if test="iSex  !=null">
+                i_sex = #{iSex,jdbcType=TINYINT},
+            </if>
+            <if test="cEducation  !=null">
+                c_education = #{cEducation,jdbcType=VARCHAR},
+            </if>
+            <if test="cId  !=null">
+                c_id = #{cId,jdbcType=VARCHAR},
+            </if>
+            <if test="cAddress  !=null">
+                c_address = #{cAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="cMobile  !=null">
+                c_mobile = #{cMobile,jdbcType=VARCHAR},
+            </if>
+            <if test="cLinkman  !=null">
+                c_linkman = #{cLinkman,jdbcType=VARCHAR},
+            </if>
+            <if test="cLmmobile  !=null">
+                c_lmmobile = #{cLmmobile,jdbcType=VARCHAR},
+            </if>
+            <if test="dtJoin !=null">
+                dt_join = #{dtJoin,jdbcType=TIMESTAMP},
+            </if>
+            <if test="dtLeft  !=null">
+                dt_left = #{dtLeft,jdbcType=TIMESTAMP},
+            </if>
+            <if test="iStatus  !=null">
+                i_status = #{iStatus,jdbcType=TINYINT},
+            </if>
+            <if test="cIdpic !=null">
+                c_idpic = #{cIdpic,jdbcType=VARCHAR},
+            </if>
+            <if test="cIdpic1  !=null">
+                c_idpic1 = #{cIdpic1,jdbcType=VARCHAR},
+            </if>
+            <if test="tsCtime  !=null">
+                c_pic = #{cPic,jdbcType=VARCHAR},
+                ts_ctime = #{tsCtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="cDutyid !=null">
+                c_dutyid = #{cDutyid,jdbcType=VARCHAR},
+            </if>
+            <if test="cDid !=null">
+                c_did = #{cDid,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where c_number = #{cNumber,jdbcType=VARCHAR}
+    </update>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select c_number, c_name, i_sex, c_education, c_id, c_address, c_mobile, c_linkman,
     c_lmmobile, dt_join, dt_left, i_status, c_idpic, c_idpic1, c_pic, ts_ctime, c_dutyid,

@@ -21,7 +21,7 @@ public interface EmpService {
     int updateByPrimaryKey(Employee record);
 
     List<Employee> selectByPage(Integer page, Integer size,
-                                String number, String name, String sex,String lmmobile,Byte status);
+                                String number, String name, String sex,String lmmobile,String status);
 
-    Long PageCount(String number, String name, String sex,String lmmobile,Byte status);
+    Long PageCount(String number, String name, String sex,String lmmobile,String status);
 }

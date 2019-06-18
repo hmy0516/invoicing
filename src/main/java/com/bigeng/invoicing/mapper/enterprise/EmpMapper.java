@@ -24,7 +24,7 @@ public interface EmpMapper {
     int updateByPrimaryKey(Employee record);
 
     List<Employee> selectByPage(@Param("start") Integer start, @Param("size") Integer size,
-                                @Param("number") String number, @Param("name") String name, @Param("sex") String sex, @Param("lmmobile") String lmmobile, @Param("status") Byte status);
+                                @Param("number") String number, @Param("name") String name, @Param("sex") String sex, @Param("lmmobile") String lmmobile, @Param("status") String status);
 
-    Long getPageCount(@Param("number") String number, @Param("name") String name, @Param("sex") String sex, @Param("lmmobile") String lmmobile, @Param("status") Byte status);
+    Long getPageCount(@Param("number") String number, @Param("name") String name, @Param("sex") String sex, @Param("lmmobile") String lmmobile, @Param("status") String status);
 }

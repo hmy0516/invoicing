@@ -48,13 +48,13 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public List<Employee> selectByPage(Integer page, Integer size,
-                                       String number, String name, String sex,String lmmobile,Byte status) {
+                                       String number, String name, String sex,String lmmobile,String status) {
         int start=(page-1)*size;
         return employeeMapper.selectByPage(start,size,number,name,sex,lmmobile,status);
     }
 
     @Override
-    public Long PageCount(String number, String name, String sex,String lmmobile,Byte status) {
+    public Long PageCount(String number, String name, String sex,String lmmobile,String status) {
         return employeeMapper.getPageCount(number,name,sex,lmmobile,status);
     }
 }

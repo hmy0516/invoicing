@@ -47,9 +47,25 @@ public class Employee {
 
     private String cDid;
 
-    private Duty duty;
+    private  Duty duty;
 
-    private Department department;
+    private  Department department;
+
+    public Duty getDuty() {
+        return duty;
+    }
+
+    public void setDuty(Duty duty) {
+        this.duty = duty;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public String getcNumber() {
         return cNumber;
@@ -193,21 +209,5 @@ public class Employee {
 
     public void setcDid(String cDid) {
         this.cDid = cDid;
-    }
-
-    public Duty getDuty() {
-        return duty;
-    }
-
-    public void setDuty(Duty duty) {
-        this.duty = duty;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
     }
 }

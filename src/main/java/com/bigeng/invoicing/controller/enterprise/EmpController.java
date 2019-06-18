@@ -49,7 +49,7 @@ public class EmpController {
     public RespMsg getEmpByPage(
             @RequestParam(defaultValue = "1")  Integer page,
             @RequestParam(defaultValue = "10") Integer size,
-            String number, String name, String sex,String lmmobile,Byte status
+            String number, String name, String sex,String lmmobile,String status
     ){
         Map<String,Object> map=new HashMap<>();
         List<Employee> employees=empService.selectByPage(page,size,number,name,sex,lmmobile,status);

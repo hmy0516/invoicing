@@ -13,4 +13,5 @@ public interface DutyMapper {
     void delById(@Param("id")String id);
     void updateDuty(@Param("duty")Duty duty);
     void addDuty(@Param("duty")Duty duty);
+    Duty selectByPrimaryKey(@Param("id") String id);
 }
