@@ -13,7 +13,10 @@
   <delete id="deleteByPrimaryKey" parameterType="map" >
     delete from t_lsc_vendor_goodsprice
     where c_gid = #{cGid,jdbcType=VARCHAR}
-      or c_vid = #{cVid,jdbcType=VARCHAR}
+      and c_vid in
+    <foreach collection="cids" separator="," open="(" close=")" item="id">
+      #{id}
+    </foreach>
   </delete>
   <insert id="insert" parameterType="com.bigeng.invoicing.pojo.resource.Vendor_Goodsprice" >
     insert into t_lsc_vendor_goodsprice (c_gid, c_vid, f_price, 
@@ -55,10 +58,35 @@
     select c_gid, c_vid, f_price, dt_begin, dt_end, i_status, c_comment
     from t_lsc_vendor_goodsprice
   </select>
-  <select id="selectByPrimaryKeyWithC_gid" resultMap="BaseResultMap"  parameterType="String">
-    select * from t_lsc_vendor_goodsprice where c_gid = #{cGid,jdbcType=VARCHAR}
+  <select id="selectByPrimaryKeyWithC_gid" resultMap="BaseResultMap" >
+    select * from t_lsc_vendor_goodsprice
+    <where>
+      <if test="status!=null">
+        and i_status=#{status}
+      </if>
+      <if test="vid!=null">
+        and c_vid like concat('%',#{vid},'%')
+      </if>
+    </where>
+    and c_gid = #{cGid,jdbcType=VARCHAR}
+    <if test="sort==0">
+      ORDER BY c_gid
+    </if>
+    <if test="sort==1">
+      ORDER BY c_gid desc
+    </if>
+    limit #{start},#{size}
   </select>
-  <select id="selectByPrimaryKeyWithC_Vid" resultMap="BaseResultMap"  parameterType="String">
-    select * from t_lsc_vendor_goodsprice where c_vid = #{cVid,jdbcType=VARCHAR}
+  <select id="selectByPrimaryKeyWithC_GidCount" resultMap="BaseResultMap"  >
+    select count(*) from t_lsc_vendor_goodsprice
+    <where>
+      <if test="status!=null">
+        and i_status=#{status}
+      </if>
+      <if test="vid!=null">
+      and c_vid like concat('%',#{vid},'%')
+      </if>
+    </where>
+    and c_gid = #{cGid,jdbcType=VARCHAR}
   </select>
 </mapper>

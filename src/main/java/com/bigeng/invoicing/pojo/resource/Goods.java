@@ -27,6 +27,26 @@ public class Goods {
 
     private BigDecimal fSprice;
 
+    private Unit unit;
+
+    private Goodsclass goodsclass;
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(Unit unit) {
+        this.unit = unit;
+    }
+
+    public Goodsclass getGoodsclass() {
+        return goodsclass;
+    }
+
+    public void setGoodsclass(Goodsclass goodsclass) {
+        this.goodsclass = goodsclass;
+    }
+
     public String getcId() {
         return cId;
     }

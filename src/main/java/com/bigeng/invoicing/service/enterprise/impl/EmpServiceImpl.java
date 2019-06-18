@@ -18,27 +18,43 @@ import java.util.List;
 @Transactional
 public class EmpServiceImpl implements EmpService {
     @Autowired
-    private EmpMapper empMapper;
+    private EmpMapper employeeMapper;
 
     @Override
-    public int add(Employee employee) {
-        return empMapper.addEmp(employee);
+    public boolean deleteByPrimaryKey(String cId) {
+        String ids[]=cId.split(",");
+        return employeeMapper.deleteByPrimaryKey(ids)==ids.length;
     }
 
     @Override
-    public boolean deleteByNum(String numbers) {
-        String[] splits=numbers.split(",");
-        return empMapper.deleteByNum(splits)==splits.length;
+    public int insert(Employee record) {
+        return employeeMapper.insert(record);
     }
 
     @Override
-    public int updateEmp(Employee employee) {
-        return empMapper.updateEmp(employee);
+    public Employee selectByPrimaryKey(String cId) {
+        return employeeMapper.selectByPrimaryKey(cId);
     }
 
     @Override
-    public List<Employee> getEmpByPage(Integer page, Integer size, String keywords) {
+    public List<Employee> selectAll() {
+        return employeeMapper.selectAll();
+    }
+
+    @Override
+    public int updateByPrimaryKey(Employee record) {
+        return employeeMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<Employee> selectByPage(Integer page, Integer size,
+                                       String number, String name, String sex,String lmmobile,String status) {
         int start=(page-1)*size;
-        return empMapper.getEmpByPage(start,size,keywords);
+        return employeeMapper.selectByPage(start,size,number,name,sex,lmmobile,status);
+    }
+
+    @Override
+    public Long PageCount(String number, String name, String sex,String lmmobile,String status) {
+        return employeeMapper.getPageCount(number,name,sex,lmmobile,status);
     }
 }
