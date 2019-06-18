@@ -11,225 +11,203 @@ import java.util.Date;
  * 该类对应的是t_hr_employee表 员工的基本信息
  */
 public class Employee {
-    //工号 长度8 是主键
-    private String c_number;
+    private String cNumber;
 
-    //名称 10
-    private String c_name;
+    private String cName;
 
-    //性别 索引 0女 1男
-    private byte i_sex;
+    private Byte iSex;
 
-    //学历 4
-    private String c_education;
+    private String cEducation;
 
-    //省份证 18 可以为null
-    private String c_id;
+    private String cId;
 
-    //家庭地址 长度255 null
-    private String c_address;
+    private String cAddress;
 
-    //手机号 11
-    private String c_mobile;
+    private String cMobile;
 
-    //家庭联系人 10 null
-    private  String c_linkman;
+    private String cLinkman;
 
-    //联系人手机号 11 null
-    private String c_lmmobile;
+    private String cLmmobile;
 
-    //入职时间 null
-    private Date dt_join;
+    private Date dtJoin;
 
-    //离职时间 null
-    private Date dt_left;
+    private Date dtLeft;
 
-    //状态 索引 0在职 1离职 2退休
-    private byte i_status;
+    private Byte iStatus;
 
-    //员工正面照 255 null
-    private String c_idpic;
+    private String cIdpic;
 
-    //员工反面照 255 null
-    private  String c_idpicl;
+    private String cIdpic1;
 
-    //员工近照 255 null
-    private String c_pic;
+    private String cPic;
 
-    //创建时间
-    private Date ts_ctime;
+    private Date tsCtime;
 
-    //职务编码 4
-    private String c_dutyid;
+    private String cDutyid;
 
-    //部门编号 10
-    private String c_did;
+    private String cDid;
 
-    public String getC_number() {
-        return c_number;
+    private Duty duty;
+
+    private Department department;
+
+    public String getcNumber() {
+        return cNumber;
     }
 
-    public void setC_number(String c_number) {
-        this.c_number = c_number;
+    public void setcNumber(String cNumber) {
+        this.cNumber = cNumber;
     }
 
-    public String getC_name() {
-        return c_name;
+    public String getcName() {
+        return cName;
     }
 
-    public void setC_name(String c_name) {
-        this.c_name = c_name;
+    public void setcName(String cName) {
+        this.cName = cName;
     }
 
-    public byte getI_sex() {
-        return i_sex;
+    public Byte getiSex() {
+        return iSex;
     }
 
-    public void setI_sex(byte i_sex) {
-        this.i_sex = i_sex;
+    public void setiSex(Byte iSex) {
+        this.iSex = iSex;
     }
 
-    public String getC_education() {
-        return c_education;
+    public String getcEducation() {
+        return cEducation;
     }
 
-    public void setC_education(String c_education) {
-        this.c_education = c_education;
+    public void setcEducation(String cEducation) {
+        this.cEducation = cEducation;
     }
 
-    public String getC_id() {
-        return c_id;
+    public String getcId() {
+        return cId;
     }
 
-    public void setC_id(String c_id) {
-        this.c_id = c_id;
+    public void setcId(String cId) {
+        this.cId = cId;
     }
 
-    public String getC_address() {
-        return c_address;
+    public String getcAddress() {
+        return cAddress;
     }
 
-    public void setC_address(String c_address) {
-        this.c_address = c_address;
+    public void setcAddress(String cAddress) {
+        this.cAddress = cAddress;
     }
 
-    public String getC_mobile() {
-        return c_mobile;
+    public String getcMobile() {
+        return cMobile;
     }
 
-    public void setC_mobile(String c_mobile) {
-        this.c_mobile = c_mobile;
+    public void setcMobile(String cMobile) {
+        this.cMobile = cMobile;
     }
 
-    public String getC_linkman() {
-        return c_linkman;
+    public String getcLinkman() {
+        return cLinkman;
     }
 
-    public void setC_linkman(String c_linkman) {
-        this.c_linkman = c_linkman;
+    public void setcLinkman(String cLinkman) {
+        this.cLinkman = cLinkman;
     }
 
-    public String getC_lmmobile() {
-        return c_lmmobile;
+    public String getcLmmobile() {
+        return cLmmobile;
     }
 
-    public void setC_lmmobile(String c_lmmobile) {
-        this.c_lmmobile = c_lmmobile;
+    public void setcLmmobile(String cLmmobile) {
+        this.cLmmobile = cLmmobile;
     }
 
-    public Date getDt_join() {
-        return dt_join;
+    public Date getDtJoin() {
+        return dtJoin;
     }
 
-    public void setDt_join(Date dt_join) {
-        this.dt_join = dt_join;
+    public void setDtJoin(Date dtJoin) {
+        this.dtJoin = dtJoin;
     }
 
-    public Date getDt_left() {
-        return dt_left;
+    public Date getDtLeft() {
+        return dtLeft;
     }
 
-    public void setDt_left(Date dt_left) {
-        this.dt_left = dt_left;
+    public void setDtLeft(Date dtLeft) {
+        this.dtLeft = dtLeft;
     }
 
-    public byte getI_status() {
-        return i_status;
+    public Byte getiStatus() {
+        return iStatus;
     }
 
-    public void setI_status(byte i_status) {
-        this.i_status = i_status;
+    public void setiStatus(Byte iStatus) {
+        this.iStatus = iStatus;
     }
 
-    public String getC_idpic() {
-        return c_idpic;
+    public String getcIdpic() {
+        return cIdpic;
     }
 
-    public void setC_idpic(String c_idpic) {
-        this.c_idpic = c_idpic;
+    public void setcIdpic(String cIdpic) {
+        this.cIdpic = cIdpic;
     }
 
-    public String getC_idpicl() {
-        return c_idpicl;
+    public String getcIdpic1() {
+        return cIdpic1;
     }
 
-    public void setC_idpicl(String c_idpicl) {
-        this.c_idpicl = c_idpicl;
+    public void setcIdpic1(String cIdpic1) {
+        this.cIdpic1 = cIdpic1;
     }
 
-    public String getC_pic() {
-        return c_pic;
+    public String getcPic() {
+        return cPic;
     }
 
-    public void setC_pic(String c_pic) {
-        this.c_pic = c_pic;
+    public void setcPic(String cPic) {
+        this.cPic = cPic;
     }
 
-    public Date getTs_ctime() {
-        return ts_ctime;
+    public Date getTsCtime() {
+        return tsCtime;
     }
 
-    public void setTs_ctime(Date ts_ctime) {
-        this.ts_ctime = ts_ctime;
+    public void setTsCtime(Date tsCtime) {
+        this.tsCtime = tsCtime;
     }
 
-    public String getC_dutyid() {
-        return c_dutyid;
+    public String getcDutyid() {
+        return cDutyid;
     }
 
-    public void setC_dutyid(String c_dutyid) {
-        this.c_dutyid = c_dutyid;
+    public void setcDutyid(String cDutyid) {
+        this.cDutyid = cDutyid;
     }
 
-    public String getC_did() {
-        return c_did;
+    public String getcDid() {
+        return cDid;
     }
 
-    public void setC_did(String c_did) {
-        this.c_did = c_did;
+    public void setcDid(String cDid) {
+        this.cDid = cDid;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "c_number='" + c_number + '\'' +
-                ", c_name='" + c_name + '\'' +
-                ", i_sex=" + i_sex +
-                ", c_education='" + c_education + '\'' +
-                ", c_id='" + c_id + '\'' +
-                ", c_address='" + c_address + '\'' +
-                ", c_mobile='" + c_mobile + '\'' +
-                ", c_linkman='" + c_linkman + '\'' +
-                ", c_lmmobile='" + c_lmmobile + '\'' +
-                ", dt_join=" + dt_join +
-                ", dt_left=" + dt_left +
-                ", i_status=" + i_status +
-                ", c_idpic='" + c_idpic + '\'' +
-                ", c_idpicl='" + c_idpicl + '\'' +
-                ", c_pic='" + c_pic + '\'' +
-                ", ts_ctime=" + ts_ctime +
-                ", c_dutyid='" + c_dutyid + '\'' +
-                ", c_did='" + c_did + '\'' +
-                '}';
+    public Duty getDuty() {
+        return duty;
+    }
+
+    public void setDuty(Duty duty) {
+        this.duty = duty;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

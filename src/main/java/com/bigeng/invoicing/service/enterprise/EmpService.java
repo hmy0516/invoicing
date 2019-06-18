@@ -1,6 +1,5 @@
 package com.bigeng.invoicing.service.enterprise;
 
-import com.bigeng.invoicing.mapper.enterprise.EmpMapper;
 import com.bigeng.invoicing.pojo.enterprise.Employee;
 
 import java.util.List;
@@ -11,11 +10,18 @@ import java.util.List;
  * @date 2019/6/5 8:43
  */
 public interface EmpService {
-    boolean deleteByNum(String numbers);
+    boolean deleteByPrimaryKey(String cId);
 
-    int add(Employee employee);
+    int insert(Employee record);
 
-    int updateEmp(Employee employee);
+    Employee selectByPrimaryKey(String cNumber);
 
-    List<Employee> getEmpByPage(Integer page, Integer size, String keywords);
+    List<Employee> selectAll();
+
+    int updateByPrimaryKey(Employee record);
+
+    List<Employee> selectByPage(Integer page, Integer size,
+                                String number, String name, String sex,String lmmobile,Byte status);
+
+    Long PageCount(String number, String name, String sex,String lmmobile,Byte status);
 }

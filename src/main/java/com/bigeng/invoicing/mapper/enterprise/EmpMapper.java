@@ -13,11 +13,18 @@ import java.util.List;
  */
 @Mapper
 public interface EmpMapper {
-    int deleteByNum(@Param("numbers") String[] splits);
+    int deleteByPrimaryKey(@Param("cids") String[] cId);
 
-    int addEmp( Employee employee);
+    int insert(Employee record);
 
-    int updateEmp(@Param("emp") Employee employee);
+    Employee selectByPrimaryKey(String cNumber);
 
-    List<Employee> getEmpByPage(@Param("start") int start, @Param("size") Integer size,@Param("keywords") String keywords);
+    List<Employee> selectAll();
+
+    int updateByPrimaryKey(Employee record);
+
+    List<Employee> selectByPage(@Param("start") Integer start, @Param("size") Integer size,
+                                @Param("number") String number, @Param("name") String name, @Param("sex") String sex, @Param("lmmobile") String lmmobile, @Param("status") Byte status);
+
+    Long getPageCount(@Param("number") String number, @Param("name") String name, @Param("sex") String sex, @Param("lmmobile") String lmmobile, @Param("status") Byte status);
 }
