@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigeng.invoicing.mapper.base.BaseInMapper">
+    <resultMap id="baseIn" type="BaseIn">
+        <id column="c_uuid" property="c_uuid"/>
+        <result column="i_no" property="i_no"/>
+        <result column="dt_dt" property="dt_dt"/>
+        <result column="c_baseid" property="c_baseid"/>
+        <result column="c_vendor" property="c_vendor"/>
+        <result column="i_pno" property="i_pno"/>
+        <result column="c_check" property="c_check"/>
+        <result column="dt_check" property="dt_check"/>
+        <result column="c_checkout" property="c_checkout"/>
+        <result column="dt_checkout" property="dt_checkout"/>
+        <result column="c_recheck" property="c_recheck"/>
+        <result column="dt_recheck" property="dt_recheck"/>
+        <result column="dt_inv" property="dt_inv"/>
+        <result column="c_inv" property="c_inv"/>
+        <result column="i_invtype" property="i_invtype"/>
+        <result column="c_invno" property="c_invno"/>
+        <result column="c_payment" property="c_payment"/>
+        <result column="c_voucher" property="c_voucher"/>
+        <result column="b_c_comment" property="c_comment"/>
+        <result column="i_status" property="i_status"/>
+        <collection property="baseInDetail" column="i_no" ofType="BaseInDetail">
+            <id column="i_no" property="i_no"/>
+            <id column="c_gid" property="c_gid"/>
+            <result column="c_bunit" property="c_bunit"/>
+            <result column="f_price" property="f_price"/>
+            <result column="f_amount" property="f_amount"/>
+            <result column="bd_c_comment" property="c_comment"/>
+            <result column="dt_dt" property="dt_dt"/>
+        </collection>
+
+    </resultMap>
+
+    <select id="findAllBaseIn" resultMap="baseIn">
+        select b.*,bd.*,b.c_comment as b_c_comment,bd.c_comment as bd_c_comment
+        from t_lsc_basein b,t_lsc_baseindetail bd
+        where b.i_no = bd.i_no
+        order by b.dt_dt desc
+    </select>
+
+    <select id="findOneBaseIn" resultMap="baseIn" parameterType="String">
+        select b.*,bd.* ,b.c_comment as b_c_comment,bd.c_comment as bd_c_commentfrom t_lsc_basein b left join t_lsc_baseindetail bd
+        on b.i_no = bd.i_no
+        where c_uuid=#{c_uuid}
+    </select>
+</mapper>

@@ -15,5 +15,6 @@ public interface PurchorderService {
     public  int deleteAllPurchorderdetail(Long i_pono);
     public  int updateOne(Purchorder purchorder);
     public  int updateStatus(Long i_pono,int i_status);
+    public  List<Purchorder> findAllByVendor(String c_vendor);
 }
 

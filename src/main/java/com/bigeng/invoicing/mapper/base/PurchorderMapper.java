@@ -13,6 +13,8 @@ public interface PurchorderMapper{
 
     public Purchorder findOne(Long i_pono);
 
+    public  List<Purchorder> findAllByVendor(String c_vendor);
+
     @Insert("insert into t_lsc_purchorder(c_uuid,i_pono,dt_dt,dt_begin,dt_end,c_clerk,c_vendor,c_base,c_sale,c_check,dt_check,c_checkout,dt_checkout,c_invalid,dt_invalid,c_comment,i_bno,i_status) values (#{c_uuid},#{i_pono},#{dt_dt},#{dt_begin},#{dt_end},#{c_clerk},#{c_vendor},#{c_base},#{c_sale},#{c_check},#{dt_check},#{c_checkout},#{dt_checkout},#{c_invalid},#{dt_invalid},#{c_comment},#{i_bno},#{i_status})")
     public Boolean addOne(Purchorder purchorder);
 

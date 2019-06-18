@@ -59,4 +59,9 @@ public class PurchorderServiceImpl implements PurchorderService {
         return purchorderMapper.updateStatus(i_pono,i_status);
     }
 
+    @Override
+    public List<Purchorder> findAllByVendor(String c_vendor) {
+        return purchorderMapper.findAllByVendor(c_vendor);
+    }
+
 }
