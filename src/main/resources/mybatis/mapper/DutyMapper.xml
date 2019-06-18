@@ -11,6 +11,18 @@
         select * from t_hr_duty limit #{start},#{count}
     </select>
 
+    <select id="findBy" resultMap="baseResultMap" parameterType="com.bigeng.invoicing.pojo.enterprise.DutyDto">
+        select * from t_hr_duty
+        <where>
+            <if test="dto.cId != null and dto.cId != '' ">
+              and c_id=#{dto.cId}
+            </if>
+            <if test="dto.cDuty != null and dto.cDuty !=''">
+              and c_duty=#{dto.cDuty}
+            </if>
+        </where>
+    </select>
+
     <select id="getAllCount" resultType="Integer">
         select count(*) from t_hr_duty
     </select>

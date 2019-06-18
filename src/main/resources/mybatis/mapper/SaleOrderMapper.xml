@@ -43,6 +43,10 @@
       </if>
     </where>
   </select>
+  <select id="findMaxDate" resultType="Long">
+    select max(i_no) from t_lsc_saleorder
+    where to_days(dt_dt) = to_days(now())
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderKey" >
     delete from t_lsc_saleorder
     where i_no = #{iNo,jdbcType=BIGINT}

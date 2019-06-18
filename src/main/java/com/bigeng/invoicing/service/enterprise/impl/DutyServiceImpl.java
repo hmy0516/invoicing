@@ -2,6 +2,7 @@ package com.bigeng.invoicing.service.enterprise.impl;
 
 import com.bigeng.invoicing.mapper.enterprise.DutyMapper;
 import com.bigeng.invoicing.pojo.enterprise.Duty;
+import com.bigeng.invoicing.pojo.enterprise.DutyDto;
 import com.bigeng.invoicing.service.enterprise.DutyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,13 @@ public class DutyServiceImpl implements DutyService {
     @Override
     public Integer getAllCount() {
         return dutyMapper.getAllCount();
+    }
+
+    @Override
+    public List<Duty> findBy(DutyDto dto) {
+        System.out.println("ser"+dto.getcId());
+        System.out.println("ser"+dto.getcDuty());
+        return dutyMapper.findBy(dto);
     }
 
     @Override

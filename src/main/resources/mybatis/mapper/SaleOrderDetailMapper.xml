@@ -105,6 +105,17 @@
       </if>
     </trim>
   </insert>
+  <!--批量添加-->
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into t_lsc_saleorderdetail values
+    <!-- 注意foreach的语法,集合直接写list字符串，用item表示当前遍历的对象，结果集合通过使用逗号分隔使用separator属性 -->
+    <foreach collection="list" item="item" separator=",">
+      (#{item.iNo,jdbcType=BIGINT}, #{item.cGid,jdbcType=VARCHAR}, #{item.fQuant,jdbcType=DECIMAL},
+      #{item.cBunit,jdbcType=VARCHAR}, #{item.fPrice,jdbcType=DECIMAL}, #{item.fAmount,jdbcType=DECIMAL},
+      #{item.cComment,jdbcType=VARCHAR}, #{item.dtDt,jdbcType=DATE})
+    </foreach>
+  </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.bigeng.invoicing.pojo.base.SaleOrderDetail" >
     update t_lsc_saleorderdetail
     <set >

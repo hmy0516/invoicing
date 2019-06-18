@@ -7,6 +7,8 @@ import com.bigeng.invoicing.service.base.SaleOrderDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SaleOrderDetailServiceImpl implements SaleOrderDetailService {
 
@@ -21,6 +23,11 @@ public class SaleOrderDetailServiceImpl implements SaleOrderDetailService {
     @Override
     public int insert(SaleOrderDetail record) {
         return detailMapper.insert(record);
+    }
+
+    @Override
+    public int insertBatch(List<SaleOrderDetail> list) {
+        return detailMapper.insertBatch(list);
     }
 
     @Override

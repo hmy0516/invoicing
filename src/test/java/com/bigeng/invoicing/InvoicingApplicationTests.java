@@ -13,13 +13,14 @@ public class InvoicingApplicationTests {
 
     @Test
     public void contextLoads() {
-        System.out.println(getUUID().substring(0,10)+":getUUID");
-        String[] retArray = new String[10];
+        //System.out.println(getUUID().substring(0,10)+":getUUID");
+        System.out.println(UUID.randomUUID().toString().replaceAll("-", ""));
+        /*String[] retArray = new String[10];
         for(int i=0;i<10;i++){
 
             retArray[i] = getUUID();
         }
-        System.out.println("uuid:"+retArray);
+        System.out.println("uuid:"+retArray);*/
     }
 
     public static String getUUID(){

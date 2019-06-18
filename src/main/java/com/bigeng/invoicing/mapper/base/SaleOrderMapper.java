@@ -4,6 +4,7 @@ import com.bigeng.invoicing.pojo.base.SaleOrder;
 import com.bigeng.invoicing.pojo.base.SaleOrderKey;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Date;
 import java.util.List;
 
 @Mapper
@@ -15,6 +16,8 @@ public interface SaleOrderMapper {
     int insertSelective(SaleOrder record);
 
     SaleOrder selectByPrimaryKey(SaleOrderKey key);
+
+    Long findMaxDate();
 
     List<SaleOrder> selectByKey(SaleOrderKey key);
 

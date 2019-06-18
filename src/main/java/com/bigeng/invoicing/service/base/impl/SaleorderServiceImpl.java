@@ -7,7 +7,9 @@ import com.bigeng.invoicing.service.base.SaleorderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class SaleorderServiceImpl implements SaleorderService {
@@ -22,6 +24,8 @@ public class SaleorderServiceImpl implements SaleorderService {
 
     @Override
     public int insert(SaleOrder record) {
+        record.setcUuid(UUID.randomUUID().toString().replaceAll("-", ""));
+        record.setDtDt(new Date());
         return saleOrderMapper.insert(record);
     }
 
@@ -33,6 +37,11 @@ public class SaleorderServiceImpl implements SaleorderService {
     @Override
     public SaleOrder selectByPrimaryKey(SaleOrderKey key) {
         return saleOrderMapper.selectByPrimaryKey(key);
+    }
+
+    @Override
+    public Long findMaxDate() {
+        return saleOrderMapper.findMaxDate();
     }
 
     @Override

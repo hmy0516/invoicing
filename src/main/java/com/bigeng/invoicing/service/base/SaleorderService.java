@@ -3,6 +3,7 @@ package com.bigeng.invoicing.service.base;
 import com.bigeng.invoicing.pojo.base.SaleOrder;
 import com.bigeng.invoicing.pojo.base.SaleOrderKey;
 
+import java.util.Date;
 import java.util.List;
 
 public interface SaleorderService {
@@ -12,6 +13,8 @@ public interface SaleorderService {
     int insertSelective(SaleOrder record);
 
     SaleOrder selectByPrimaryKey(SaleOrderKey key);
+
+    Long findMaxDate();
 
     List<SaleOrder> showAllSale(SaleOrderKey key);
 

@@ -1,11 +1,11 @@
 package com.bigeng.invoicing.pojo.base;
 
-import com.bigeng.invoicing.pojo.resource.Goods;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class SaleOrderDetail extends SaleOrderDetailKey {
+public class SaleOrderDetail{
     private BigDecimal fQuant;
 
     private String cBunit;
@@ -16,16 +16,41 @@ public class SaleOrderDetail extends SaleOrderDetailKey {
 
     private String cComment;
 
+    private Long iNo;
+
+    private String cGid;
+
+    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
     private Date dtDt;
 
-    private Goods goods;
-
-    public Goods getGoods() {
-        return goods;
+    @Override
+    public String toString() {
+        return "SaleOrderDetail{" +
+                "fQuant=" + fQuant +
+                ", cBunit='" + cBunit + '\'' +
+                ", fPrice=" + fPrice +
+                ", fAmount=" + fAmount +
+                ", cComment='" + cComment + '\'' +
+                ", iNo=" + iNo +
+                ", cGid='" + cGid + '\'' +
+                ", dtDt=" + dtDt +
+                '}';
     }
 
-    public void setGoods(Goods goods) {
-        this.goods = goods;
+    public Long getiNo() {
+        return iNo;
+    }
+
+    public void setiNo(Long iNo) {
+        this.iNo = iNo;
+    }
+
+    public String getcGid() {
+        return cGid;
+    }
+
+    public void setcGid(String cGid) {
+        this.cGid = cGid;
     }
 
     public BigDecimal getfQuant() {

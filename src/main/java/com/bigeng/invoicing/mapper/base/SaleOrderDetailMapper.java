@@ -5,6 +5,8 @@ import com.bigeng.invoicing.pojo.base.SaleOrderDetailKey;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 @Mapper
 public interface SaleOrderDetailMapper {
     int deleteByPrimaryKey(SaleOrderDetailKey key);
@@ -12,6 +14,8 @@ public interface SaleOrderDetailMapper {
     int insert(SaleOrderDetail record);
 
     int insertSelective(SaleOrderDetail record);
+
+    int insertBatch(List<SaleOrderDetail> list);
 
     SaleOrderDetail selectByPrimaryKey(SaleOrderDetailKey key);
 

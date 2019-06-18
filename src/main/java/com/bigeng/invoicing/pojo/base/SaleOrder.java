@@ -1,9 +1,16 @@
 package com.bigeng.invoicing.pojo.base;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import java.util.List;
 
 public class SaleOrder extends SaleOrderKey {
+    private Long iNo;
+
+    @JsonFormat(pattern="yyyy-MM-dd",timezone="GMT+8")
+    private Date dtDt;
+
     private String cUuid;
 
     private String cCid;
@@ -30,12 +37,45 @@ public class SaleOrder extends SaleOrderKey {
 
     private List<SaleOrderDetail> detailList;
 
-    public List<SaleOrderDetail> getDetailList() {
-        return detailList;
+    @Override
+    public String toString() {
+        return "SaleOrder{" +
+                "iNo=" + iNo +
+                ", dtDt=" + dtDt +
+                ", cUuid='" + cUuid + '\'' +
+                ", cCid='" + cCid + '\'' +
+                ", cClerk='" + cClerk + '\'' +
+                ", cCheck='" + cCheck + '\'' +
+                ", dtCheck=" + dtCheck +
+                ", cCheckout='" + cCheckout + '\'' +
+                ", dtCheckout=" + dtCheckout +
+                ", cInvalid='" + cInvalid + '\'' +
+                ", dtInvalid=" + dtInvalid +
+                ", cComment='" + cComment + '\'' +
+                ", iBono=" + iBono +
+                ", iStatus=" + iStatus +
+                ", detailList=" + detailList +
+                '}';
     }
 
-    public void setDetailList(List<SaleOrderDetail> detailList) {
-        this.detailList = detailList;
+    @Override
+    public Long getiNo() {
+        return iNo;
+    }
+
+    @Override
+    public void setiNo(Long iNo) {
+        this.iNo = iNo;
+    }
+
+    @Override
+    public Date getDtDt() {
+        return dtDt;
+    }
+
+    @Override
+    public void setDtDt(Date dtDt) {
+        this.dtDt = dtDt;
     }
 
     public String getcUuid() {
@@ -43,7 +83,7 @@ public class SaleOrder extends SaleOrderKey {
     }
 
     public void setcUuid(String cUuid) {
-        this.cUuid = cUuid == null ? null : cUuid.trim();
+        this.cUuid = cUuid;
     }
 
     public String getcCid() {
@@ -51,7 +91,7 @@ public class SaleOrder extends SaleOrderKey {
     }
 
     public void setcCid(String cCid) {
-        this.cCid = cCid == null ? null : cCid.trim();
+        this.cCid = cCid;
     }
 
     public String getcClerk() {
@@ -59,7 +99,7 @@ public class SaleOrder extends SaleOrderKey {
     }
 
     public void setcClerk(String cClerk) {
-        this.cClerk = cClerk == null ? null : cClerk.trim();
+        this.cClerk = cClerk;
     }
 
     public String getcCheck() {
@@ -67,7 +107,7 @@ public class SaleOrder extends SaleOrderKey {
     }
 
     public void setcCheck(String cCheck) {
-        this.cCheck = cCheck == null ? null : cCheck.trim();
+        this.cCheck = cCheck;
     }
 
     public Date getDtCheck() {
@@ -83,7 +123,7 @@ public class SaleOrder extends SaleOrderKey {
     }
 
     public void setcCheckout(String cCheckout) {
-        this.cCheckout = cCheckout == null ? null : cCheckout.trim();
+        this.cCheckout = cCheckout;
     }
 
     public Date getDtCheckout() {
@@ -99,7 +139,7 @@ public class SaleOrder extends SaleOrderKey {
     }
 
     public void setcInvalid(String cInvalid) {
-        this.cInvalid = cInvalid == null ? null : cInvalid.trim();
+        this.cInvalid = cInvalid;
     }
 
     public Date getDtInvalid() {
@@ -115,7 +155,7 @@ public class SaleOrder extends SaleOrderKey {
     }
 
     public void setcComment(String cComment) {
-        this.cComment = cComment == null ? null : cComment.trim();
+        this.cComment = cComment;
     }
 
     public Integer getiBono() {
@@ -132,5 +172,13 @@ public class SaleOrder extends SaleOrderKey {
 
     public void setiStatus(Integer iStatus) {
         this.iStatus = iStatus;
+    }
+
+    public List<SaleOrderDetail> getDetailList() {
+        return detailList;
+    }
+
+    public void setDetailList(List<SaleOrderDetail> detailList) {
+        this.detailList = detailList;
     }
 }

@@ -1,6 +1,8 @@
 package com.bigeng.invoicing.controller.enterprise;
 
+import com.bigeng.invoicing.pojo.RespMsg;
 import com.bigeng.invoicing.pojo.enterprise.Duty;
+import com.bigeng.invoicing.pojo.enterprise.DutyDto;
 import com.bigeng.invoicing.service.enterprise.DutyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,33 +17,36 @@ public class DutyController {
     DutyService dutyService;
 
     //@GetMapping("/showAll/{page}/{count}")
-    @RequestMapping(value = "/showAll/{page}/{count}",method = RequestMethod.GET)
-    public List<Duty> showAll(@PathVariable Integer page,@PathVariable Integer count){
-        return dutyService.showAll(page,count);
+    @GetMapping("/Duty")
+    public RespMsg showAll(@RequestParam(value = "page", defaultValue = "1") Integer page,@RequestParam(value = "count", defaultValue = "5") Integer count){
+        List<Duty> dutyList = dutyService.showAll(page, count);
+        return RespMsg.ok("success!",dutyList);
     }
 
-    @RequestMapping(value = "/getCount",method = RequestMethod.GET)
-    public Integer getPageCount(){
-        return dutyService.getAllCount();
+    @GetMapping("/DutyBy")
+    public RespMsg findBy(@RequestBody DutyDto dto){
+        List<Duty> dutyList = dutyService.findBy(dto);
+        return RespMsg.ok("success!",dutyList);
     }
 
     //应该不需要删除职务
-    @RequestMapping(value = ("/del/{id}"))
+    @RequestMapping(value = ("/Duty/{id}"))
     public void delById(@PathVariable String id){
         dutyService.delById(id);
     }
 
 
     //@PutMapping("/updateDuty")
-    @RequestMapping(value = "/updateDuty",method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public void updateDuty(@RequestBody Duty duty){
+    @RequestMapping(value = "/Duty",method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public RespMsg updateDuty(@RequestBody Duty duty){
         dutyService.updateDuty(duty);
+        return RespMsg.ok("success!");
     }
 
-    @RequestMapping(value = "/addDuty",method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
-    public void addDuty(@RequestBody Duty duty){
-        System.out.println(duty);
+    @RequestMapping(value = "/Duty",method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
+    public RespMsg addDuty(@RequestBody Duty duty){
         dutyService.addDuty(duty);
+        return RespMsg.ok("success!");
     }
 
 }
