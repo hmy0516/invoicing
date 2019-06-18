@@ -23,7 +23,7 @@ public class EmpController {
 
     @RequestMapping(value = "/emp",method = RequestMethod.POST)
     public RespMsg addEmp(@RequestBody Employee employee){
-        if(empService.add(employee)==1)
+        if(empService.insert(employee)==1)
             return RespMsg.ok("添加成功");
         else
             return RespMsg.error("删除失败");
@@ -31,7 +31,7 @@ public class EmpController {
 
     @RequestMapping(value = "/emp/{numbers}",method=RequestMethod.DELETE)
     public RespMsg deleteByNum(@PathVariable String numbers){
-        if(empService.deleteByNum(numbers))
+        if(empService.deleteByPrimaryKey(numbers))
             return RespMsg.ok("删除成功");
         else
             return RespMsg.error("删除失败");
@@ -39,7 +39,7 @@ public class EmpController {
 
     @RequestMapping(value="/emp",method= RequestMethod.PUT)
     public RespMsg updateEmp(@RequestBody Employee employee){
-        if(empService.updateEmp(employee)==1)
+        if(empService.updateByPrimaryKey(employee)==1)
             return  RespMsg.ok("更新成功");
         else
             return RespMsg.error("更新失败");
@@ -49,11 +49,14 @@ public class EmpController {
     public RespMsg getEmpByPage(
             @RequestParam(defaultValue = "1")  Integer page,
             @RequestParam(defaultValue = "10") Integer size,
-            @RequestParam(defaultValue = "") String keywords
+            String number, String name, String sex,String lmmobile,String status
     ){
         Map<String,Object> map=new HashMap<>();
-        List<Employee> employeeList=empService.getEmpByPage(page,size,keywords);
-        return RespMsg.ok("查询成功",employeeList);
+        List<Employee> employees=empService.selectByPage(page,size,number,name,sex,lmmobile,status);
+        map.put("employees",employees);
+        Long count=empService.PageCount(number,name,sex,lmmobile,status);
+        map.put("count",count);
+        return RespMsg.ok("查询成功",map);
     }
 
 }

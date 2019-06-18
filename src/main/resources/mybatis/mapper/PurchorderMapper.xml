@@ -35,6 +35,7 @@
         select p.i_pono p_i_pono1,pd.c_gid,pd.f_pquant,pd.c_unit,pd.f_price,pd.f_price,pd.f_amount,  pd.i_pono  pd_i_pono2,pd.c_comment  pd_c_comment,p.*
         from t_lsc_purchorder p,t_lsc_purchorderdetail pd
         where p.i_pono = pd.i_pono
+        order by p.dt_dt desc
     </select>
 
     <select id="findOne" resultMap="purchorder" parameterType="Long">
@@ -42,6 +43,13 @@
         from t_lsc_purchorder p,t_lsc_purchorderdetail pd
         where p.i_pono = pd.i_pono
         and p.i_pono=#{i_pono}
+    </select>
+
+    <select id="findAllByVendor" resultMap="purchorder" parameterType="String">
+        select p.i_pono p_i_pono1,pd.c_gid,pd.f_pquant,pd.c_unit,pd.f_price,pd.f_price,pd.f_amount,  pd.i_pono  pd_i_pono2,pd.c_comment  pd_c_comment,p.*
+        from t_lsc_purchorder p,t_lsc_purchorderdetail pd
+        where p.i_pono = pd.i_pono,c_vendor=#{c_vendor}
+        order by p.dt_dt desc
     </select>
 
 </mapper>

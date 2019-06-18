@@ -14,6 +14,10 @@
     <result column="c_qrcode" property="cQrcode" jdbcType="VARCHAR" />
     <result column="f_pprice" property="fPprice" jdbcType="DECIMAL" />
     <result column="f_sprice" property="fSprice" jdbcType="DECIMAL" />
+    <collection property="unit" column="c_bunit" ofType="com.bigeng.invoicing.pojo.resource.Unit"
+                select="com.bigeng.invoicing.mapper.resource.UnitMapper.selectByPrimaryKey"></collection>
+      <collection property="goodsclass" column="c_class" ofType="com.bigeng.invoicing.pojo.resource.Goodsclass"
+                  select="com.bigeng.invoicing.mapper.resource.GoodsclassMapper.selectByPrimaryKey"></collection>
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from t_lsc_goods where c_id in

@@ -6,9 +6,7 @@ import com.bigeng.invoicing.service.enterprise.impl.DepartmentServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
 
 @RestController
@@ -42,6 +40,8 @@ public class DepartmentController {
     }
 
     //添加
+    //@RequestMapping(value = "/aadepartment",method = RequestMethod.POST)
+
     @PostMapping("/department")
     public  boolean  addOne(@RequestBody Department department){
         boolean bool = departmentServiceImpl.addOne(department);

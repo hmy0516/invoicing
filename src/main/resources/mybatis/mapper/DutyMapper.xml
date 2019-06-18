@@ -48,4 +48,7 @@
         insert into t_hr_duty values (#{duty.cId},#{duty.cDuty},#{duty.cComment})
     </insert>
 
+    <select id="selectByPrimaryKey" resultMap="baseResultMap"  >
+      select * from t_hr_duty where c_id=#{id}
+  </select>
 </mapper>
