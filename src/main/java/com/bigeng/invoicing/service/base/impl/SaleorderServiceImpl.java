@@ -18,8 +18,8 @@ public class SaleorderServiceImpl implements SaleorderService {
     SaleOrderMapper saleOrderMapper;
 
     @Override
-    public List<SaleOrder> showAllSale(SaleOrderKey key) {
-        return saleOrderMapper.selectByKey(key);
+    public List<SaleOrder> showAllSale() {
+        return saleOrderMapper.selectByKey();
     }
 
     @Override

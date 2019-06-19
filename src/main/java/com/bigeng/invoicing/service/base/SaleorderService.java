@@ -16,7 +16,7 @@ public interface SaleorderService {
 
     Long findMaxDate();
 
-    List<SaleOrder> showAllSale(SaleOrderKey key);
+    List<SaleOrder> showAllSale();
 
     int updateByPrimaryKeySelective(SaleOrder record);
 

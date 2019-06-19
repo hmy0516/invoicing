@@ -19,7 +19,7 @@ public interface SaleOrderMapper {
 
     Long findMaxDate();
 
-    List<SaleOrder> selectByKey(SaleOrderKey key);
+    List<SaleOrder> selectByKey();
 
     int updateByPrimaryKeySelective(SaleOrder record);
 

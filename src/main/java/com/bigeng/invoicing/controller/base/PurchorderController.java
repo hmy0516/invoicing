@@ -1,6 +1,6 @@
 package com.bigeng.invoicing.controller.base;
 
-import com.bigeng.invoicing.config.WebSocketServer;
+//import com.bigeng.invoicing.config.WebSocketServer;
 import com.bigeng.invoicing.pojo.RespMsg;
 import com.bigeng.invoicing.pojo.base.Purchorder;
 import com.bigeng.invoicing.pojo.base.PurchorderParam;
@@ -43,12 +43,12 @@ public class PurchorderController {
             if(boolTemp==false)
                 return false;
         }
-        try {
+        /*try {
             WebSocketServer.sendInfo("有新订单！",purchorder.getC_vendor());
         } catch (IOException e) {
             e.printStackTrace();
             return false;
-        }
+        }*/
 
         return true;
     }

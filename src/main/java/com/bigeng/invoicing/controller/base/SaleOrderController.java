@@ -1,6 +1,7 @@
 package com.bigeng.invoicing.controller.base;
 
 import com.alibaba.fastjson.JSON;
+import com.bigeng.invoicing.config.WebSocket;
 import com.bigeng.invoicing.pojo.RespMsg;
 import com.bigeng.invoicing.pojo.base.SaleOrder;
 import com.bigeng.invoicing.pojo.base.SaleOrderKey;
@@ -25,10 +26,13 @@ public class SaleOrderController {
     @Autowired
     SaleOrderDetailService detailService;
 
+    @Autowired
+    private WebSocket webSocket;
+
     @RequestMapping(value = "/sale/order" ,method = RequestMethod.GET)
-    public RespMsg showAllOrder(@RequestBody SaleOrderKey key, @RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "5") int pageSize ){
+    public RespMsg showAllOrder(@RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "5") int pageSize ){
         PageHelper.startPage(pageNum,pageSize);
-        List<SaleOrder> orderList = saleorderService.showAllSale(key);
+        List<SaleOrder> orderList = saleorderService.showAllSale();
         PageInfo<SaleOrder> page = new PageInfo<>(orderList);
         return RespMsg.ok("success!",page);
     }
@@ -54,9 +58,11 @@ public class SaleOrderController {
 
     @RequestMapping(value = "/SaleOrder",method = RequestMethod.POST)
     public RespMsg insert(@RequestBody SaleOrder saleOrder){
-        System.out.println(saleOrder.toString());
+        /*System.out.println(saleOrder.toString());
         saleorderService.insert(saleOrder);
-        detailService.insertBatch(saleOrder.getDetailList());
+        detailService.insertBatch(saleOrder.getDetailList());*/
+        //webSocket.sendAllMessage(saleOrder.getiNo()+"");
+        webSocket.sendOneMessage("19002",saleOrder.getiNo()+"");
         return RespMsg.ok("success!");
     }
 

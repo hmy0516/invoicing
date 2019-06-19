@@ -10,8 +10,8 @@
     <result column="f_amount" property="fAmount" jdbcType="DECIMAL" />
     <result column="c_comment" property="cComment" jdbcType="VARCHAR" />
     <result column="dt_dt" property="dtDt" jdbcType="DATE" />
-    <association property="goods" column="c_gid" javaType="com.bigeng.invoicing.pojo.resource.Goods"
-                 select="com.bigeng.invoicing.mapper.resource.GoodsMapper.selectByPrimaryKey"/>
+    <!--<association property="goods" column="c_gid" javaType="com.bigeng.invoicing.pojo.resource.Goods"
+                 select="com.bigeng.invoicing.mapper.resource.GoodsMapper.selectByPrimaryKey"/>-->
   </resultMap>
   <sql id="Base_Column_List" >
     i_no, c_gid, f_quant, c_bunit, f_price, f_amount, c_comment, dt_dt

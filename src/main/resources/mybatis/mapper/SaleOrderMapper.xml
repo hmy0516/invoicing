@@ -34,14 +34,6 @@
     select
     <include refid="Base_Column_List" />
     from t_lsc_saleorder
-    <where>
-      <if test="iNo !=null and iNo!='' ">
-        and i_no = #{iNo,jdbcType=BIGINT}
-      </if>
-      <if test="dtDt !=null">
-        and dt_dt = #{dtDt,jdbcType=DATE}
-      </if>
-    </where>
   </select>
   <select id="findMaxDate" resultType="Long">
     select max(i_no) from t_lsc_saleorder
