@@ -39,8 +39,7 @@ public class WebSocketServer {
         }
     }
 
-    /**
-     * 连接关闭调用的方法
+    /*连接关闭调用的方法
      */
     @OnClose
     public void onClose() {
@@ -49,9 +48,7 @@ public class WebSocketServer {
         log.info("有一连接关闭！当前在线人数为" + getOnlineCount());
     }
 
-    /**
-     * 收到客户端消息后调用的方法
-     *
+    /**收到客户端消息后调用的方法
      * @param message 客户端发送过来的消息*/
     @OnMessage
     public void onMessage(String message, Session session) {
@@ -66,11 +63,7 @@ public class WebSocketServer {
         }
     }
 
-    /**
-     *
-     * @param session
-     * @param error
-     */
+
     @OnError
     public void onError(Session session, Throwable error) {
         log.error("发生错误");
