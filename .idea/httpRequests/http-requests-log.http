@@ -1,3 +1,91 @@
+GET http://localhost:8080/financial/purchorderReport.xlsx
+Accept: */*
+Cache-Control: no-cache
+content-type: application/x-download
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T080004.200.txt
+
+###
+
+GET http://localhost:8080/financial/purchorderReport.xlsx
+Accept: */*
+Cache-Control: no-cache
+content-type: application/x-download
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T075529.500.json
+
+###
+
+GET http://localhost:8080/financial/purchorderReport.xlsx
+Accept: */*
+Cache-Control: no-cache
+content-type: application/x-download
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T074707.500.json
+
+###
+
+GET http://localhost:8080/financial/purchorderReport.xlsx
+Accept: */*
+Cache-Control: no-cache
+content-type: application/x-download
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T074700.500.json
+
+###
+
+GET http://localhost:8080/financial/purchorderReport.xlsx
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T074332.500.json
+
+###
+
+GET http://localhost:8080/financial/purchorderReport
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T074117.500.json
+
+###
+
+GET http://localhost:8080/financial/purchorderReport
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T054326.500.json
+
+###
+
+GET http://localhost:8080//financial/purchorderReport
+Accept: */*
+Cache-Control: no-cache
+content-type: application/json
+
+   {             "c_uuid": "",             "i_no": "56567",             "dt_dt": "2019-06-17 16:53:53",             "c_baseid": "466",             "c_vendor": "44545",             "i_pno": "4646",             "c_check": "小李 ",             "dt_check": "2019-06-17 16:52:36",             "c_checkout": "是",             "dt_checkout": "2019-06-17 16:52:40",             "c_recheck": "是",             "dt_recheck": "2019-06-17 16:52:46",             "dt_inv": "2019-06-17 16:52:48",             "c_inv": "是",             "i_invtype": "0",             "c_invno": "6665",             "c_payment": "转账",             "c_voucher": "6556",             "c_comment": "动词",             "i_status": "2", "baseInDetail":[{"i_no":56567,"c_gid":"sd55454","c_bunit":"个","f_price":2.5000,"f_amount":5.0000,"c_comment":"是的","dt_dt":"2019-06-17"},{"i_no":56567,"c_gid":"sd555","c_bunit":"斤","f_price":1.0000,"f_amount":10.0000,"c_comment":"订单","dt_dt":"2019-06-17"}]         }
+
+<> 2019-06-19T054311.500.json
+
+###
+
 POST http://localhost:8080/baseIn
 Accept: */*
 Cache-Control: no-cache
@@ -453,103 +541,6 @@ content-type: application/json
 {"c_groupname":"测试股份公司","c_alias":"测试公司","c_addr":"合肥经开区锦绣大道#35","c_coordinates":"测试测试","c_logo":"/sd/ds","c_city":"合肥市","ts_ctime":"2019-06-09 08:00:00"}
 
 <> 2019-06-11T095737.200.json
-
-###
-
-GET http://localhost:8080/purchorder
-Accept: */*
-Cache-Control: no-cache
-content-type: application/json
-
-{"c_groupname":"测试股份公司","c_alias":"测试公司","c_addr":"合肥经开区锦绣大道#35","c_coordinates":"测试测试","c_logo":"/sd/ds","c_city":"合肥市","ts_ctime":"2019-06-09 08:00:00"}
-
-<> 2019-06-11T095629.404.json
-
-###
-
-GET http://localhost:8080/purchorder
-Accept: */*
-Cache-Control: no-cache
-content-type: application/json
-
-{"c_groupname":"测试股份公司","c_alias":"测试公司","c_addr":"合肥经开区锦绣大道#35","c_coordinates":"测试测试","c_logo":"/sd/ds","c_city":"合肥市","ts_ctime":"2019-06-09 08:00:00"}
-
-<> 2019-06-11T095420.404.json
-
-###
-
-DELETE http://localhost:8080/groupinfo/测试股份公司
-POST http://localhost:8080/login
-Accept: */*
-Cache-Control: no-cache
-content-type: application/json
-Cache-Control: no-cache
-content-type: application/json;charset=UTF-8
-Access-Control-Allow-Methods: GET, POST, OPTIONS
-
-{"c_groupname":"测试股份公司","c_alias":"测试公司","c_addr":"合肥经开区锦绣大道#35","c_coordinates":"测试测试","c_logo":"/sd/ds","c_city":"合肥市","ts_ctime":"2019-06-09 08:00:00"}
-{"username":"a001","password":"123456"}
-
-<> 2019-06-09T102404.200.json
-<> 2019-06-07T062111.200.json
-
-###
-
-DELETE http://localhost:8080/groupinfo/测试股份公司
-POST http://localhost:8080/login
-Accept: */*
-Cache-Control: no-cache
-content-type: application/json
-
-{"c_groupname":"测试股份公司","c_alias":"测试公司","c_addr":"合肥经开区锦绣大道#35","c_coordinates":"测试测试","c_logo":"/sd/ds","c_city":"合肥市","ts_ctime":"2019-06-09 08:00:00"}
-
-<> 2019-06-09T102321.200.json
-
-###
-Cache-Control: no-cache
-content-type: application/json;charset=UTF-8
-Access-Control-Allow-Methods: GET, POST, OPTIONS
-
-DELETE http://localhost:8080/groupinfo/测试股份公司
-Accept: */*
-Cache-Control: no-cache
-content-type: application/json
-username="a001",password="123456"
-
-{"c_groupname":"测试股份公司","c_alias":"测试公司","c_addr":"合肥经开区锦绣大道#35","c_coordinates":"测试测试","c_logo":"/sd/ds","c_city":"合肥市","ts_ctime":"2019-06-09 08:00:00"}
-
-<> 2019-06-09T102210.200.json
-<> 2019-06-07T054959.400.json
-
-###
-
-POST http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d011","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T035517.200.json
-
-###
-
-POST http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d010","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T035201.200.json
-
-###
-
-PUT http://localhost:8080/department
-Accept: */*
-Content-Type: application/json
-
-{"cDid":"d009","cDepartment":"销售部", "cComment":"插入测试"}
-
-<> 2019-06-05T035121.200.json
 
 ###
 
